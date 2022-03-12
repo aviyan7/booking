@@ -7,7 +7,7 @@ if(isset($log))
 {
 	if($id=="" || $pass=="")
 	{
-	$error= "<h3 style='color:red'>fill all details</h3>";	
+	$error= "<h3 style='color:red'>Fill all details</h3>";	
 	}		
 	else
 	{
@@ -36,8 +36,10 @@ if(isset($back))
     <title>Login Form</title>    
     <link rel="stylesheet" type="text/css" href="adminstyle1.css">    
 </head>    
-<body>    
-    <h2>Login Page</h2><br>    
+<body>  
+    <?php include('menu1.php'); ?>  
+    <?php include('footer.php'); ?>
+    <h2>Admin Login</h2>    
     <div class="adlogin">  
     <?php echo @$error;?> 
     <form id="login" method="post" action="#">  

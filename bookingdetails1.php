@@ -1,3 +1,8 @@
+<?php 
+//  session_start();
+error_reporting(1);
+include('connection1.php');
+?>
 <style>
 	table{
 		margin-left:15%;
@@ -27,8 +32,7 @@ $i=1;
 $sql=mysqli_query($con,"select * from room_booking_details");
 while($res=mysqli_fetch_assoc($sql))
 {
-$oid=$res['id'];
-
+$oid=$res['no'];
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
@@ -43,9 +47,8 @@ $oid=$res['id'];
 		<td><?php echo $res['occupancy']; ?></td>
 		<td><a style="color:red" href="cancelorder1.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
 	</td>
-	</tr>
-<?php 	
-}
-
-?>	
+	</tr>	
 </table>
+<?php
+}
+?>

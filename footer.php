@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="footerstyle.css">
-</head>
-<body> 
+
+<link rel="stylesheet" href="footerstyle.css">
 <!--  FOOTER START -->
    
 <div class="footer">

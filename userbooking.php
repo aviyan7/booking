@@ -30,11 +30,10 @@ extract($_REQUEST);
 
 <?php 
 $i=1;
-$sql=mysqli_query($con,"select * from user_room_booking_details where email='$id' ");
+$sql=mysqli_query($con,"select * from user_room_booking_details where email='$oid' ");
 while($res=mysqli_fetch_assoc($sql))
 {
 $oid=$res['id'];
-
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>

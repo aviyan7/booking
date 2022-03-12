@@ -19,11 +19,22 @@ div.gallery {
   * {
     box-sizing: border-box;
   }
-  
+
+ 
   .img {
-    padding: 2px 12px;
+    padding: 5px 30px;
     float: left;
-    width: 20%;
+    width: 25%;
+    margin-bottom: 2.5rem;
+  }
+
+  .rooms{
+    width: 100px;  
+    height: 30px;   
+    background-color: green; 
+    color:white;
+    margin-left: 5rem; 
+    margin-bottom: 0.5rem;
   }
   
   @media only screen and (max-width: 700px) {

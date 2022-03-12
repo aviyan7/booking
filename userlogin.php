@@ -2,16 +2,16 @@
 session_start();
 if($_SESSION['create_account_logged_in']!="")
 {
-    header('location:userbooking.php');
+    header('location:roombooking.php');
 }
 error_reporting(1);
 require('connection1.php');
 extract($_REQUEST);
-if(isset($login))
+if(isset($log))
 {
 	if($id=="" || $pass=="")
 	{
-	$error= "<h3 style='color:red'>fill all details</h3>";	
+	$error= "<h3 style='color:red'>Fill all details</h3>";	
 	}		
 	else
 	{
@@ -19,7 +19,7 @@ if(isset($login))
 		if(mysqli_num_rows($sql))
 		{
 		$_SESSION['create_account_logged_in']=$id;	
-		header('location:userbooking.php');	
+		header('location:roombooking.php');	
 		}
 		else
 		{
@@ -27,43 +27,36 @@ if(isset($login))
 		}	
 	}
 }
+if(isset($back))
+{
+    header('location:index1.php');
+}
+
+include('menu1.php'); 
+ include('footer.php'); 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Booking.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="loginstyle.css">
-</head>
-<body">
-	<?php
-include('menu1.php');
-	?>
- <!-- Primary Id-->
-  <div class="login-page">
-    <div class="form">
-		<div class="login">
-			<div class="login-header">
-				<h3>User Login</h3>
-				<p>Please enter your credentials to login. </p>
-			</div>
-<div>
-			<?php echo @$error;?>
-          <form action="#" method="post"><br>
-              <div class="form-group">
-                <input type="Email" class="form-control"name="id" placeholder="Email Id"required>
-              </div>
-            <div class="form-group">
-                <input type="Password" class="form-control"name="pass" placeholder="Password"required>
-            </div>
-          <input type="submit" value="Login" name="login" class="button" required>
-      	</form><br>  
-        
-    </div><br>
-</div>
-<?php
-include('Footer.php');
-?>
-</body>
-</html>
+
+ 
+<link rel="stylesheet" href="adminstyle1.css">
+ <h2>User Login</h2>    
+    <div class="adlogin">  
+	<?php echo @$error;?>
+    <form id="login" method="post" action="#">  
+        <div class="form-group">  
+        <label><b>Email</b></label>    
+        <input type="text" name="id" id="id" class="form-control" placeholder="Enter your email" required>    
+        <br><br></div> 
+        <div class="form-group">    
+        <label><b>Password</b></label>    
+        <input type="Password" name="pass" id="pass" placeholder="Enter your Password" required>    
+        <br><br></div>
+        <div class="form-group"> 
+        <input type="submit" value="Login" name="log" id="log" required>       
+        <input type="submit" value="Back" id="back" name="back">
+     </div> 
+     <br>
+        <input type="checkbox" id="check">    
+        <span>Remember me</span> <br>
+        <a href="createuser.php">Create an User</a> 
+    </form>  
+</div>    

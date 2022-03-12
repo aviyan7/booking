@@ -24,22 +24,23 @@ $sql=mysqli_query($con,"select * from admin where username='$admin' and password
 <!DOCTYPE html>
 <html>
 	<head>
-<link rel="stylesheet" href="updatestyle.css">
+<link rel="stylesheet" href="updatestyle1.css">
 </head>
 <body>
 
 <div class="container">
+<h1 style='margin-left:18em'>Update Password</h1><hr><br>
 	<form method="post" enctype="multipart/form-data" class="updateForm">
-<div class="row">
-        <label>Old  Password</label>
+	<label>Enter your Current  Password:</label>
+	<div class="row">
 		<input type="password" name="op" class="form-control"required/>
 </div>
+<label>Enter your New  Password:</label>
 <div class="row">
-        <label>New  Password</label>
 		<input type="password" name="np" class="form-control"required/>
 </div>
+<label>Please Confirm  Password:</label>
 <div class="row">
-        <label>Confirm  Password</label>
 		<input type="password" name="cp" class="form-control"required/>
 </div>
 <div class="row">

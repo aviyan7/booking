@@ -21,7 +21,9 @@ if($admin=="")
           <a>Welcome <?php echo $admin; ?></a>
             <a href="dashboard1.php?option=update_password">Update Password</a>
             <a href="dashboard1.php?option=rooms">Room</a>
+            <a href="dashboard1.php?option=add_rooms">Add Rooms</a>
 			<a href="dashboard1.php?option=booking_details">Booking Details</a>
+      <a href="dashboard1.php?option=user_registration">Registered Users</a>
       <a href="dashboard1.php?option=log_out">Log out</a>
           </div>
 <?php 
@@ -49,6 +51,10 @@ else
 	{
 	include('deleteroom1.php');	
 	}
+  else if($opt=="add_rooms")
+  {
+    include('addrooms1.php');
+  }
   
   else if($opt=="update_room")
   {
@@ -60,9 +66,9 @@ else
   }
   else if($opt=="user_registration")
   {
-    include('userregistration1.php');
+    include('userregistration.php');
   }
-  elseif($opt=="log_out")
+  else if($opt=="log_out")
   {
     header('location:index1.php');
   }

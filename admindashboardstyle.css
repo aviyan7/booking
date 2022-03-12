@@ -1,13 +1,14 @@
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
+    background-color: #FFFFE0;
   }
   
   .sidebar {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #F0FFFF;
     position: fixed;
     height: 100%;
     overflow: auto;

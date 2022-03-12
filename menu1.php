@@ -1,13 +1,13 @@
 <?php 
 session_start();
-$id=$_SESSION['create_account_logged_in'];
+$eid=$_SESSION['create_account_logged_in'];
 error_reporting(1);
 ?>
 <!DOCTYPE html>
 <html>
   <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="navbar1.css">
 </head>
 <body>
 <nav id="navbar">
@@ -20,7 +20,7 @@ error_reporting(1);
      if($_SESSION['create_account_logged_in']!="")
      {
     ?>
-    <li>
+    <li class="login">
       View Status <i class="fa fa-angle-down"></i>
       <ul>
               <li><a href="profile.php">Profile</a></li>
@@ -39,6 +39,5 @@ error_reporting(1);
 		} ?> 
   </ul>
 </nav>
-  </body>
-  </html>
+
 

@@ -25,7 +25,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 </style>
 <div style="overflow-x:auto;">
 <table class="table">
-	<h1>Room Details</h1><hr>
+	<h1 style='margin-left:10em'>Room Details</h1><hr>
 	<tr>
 	<td colspan="8"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Add New Rooms</a></td>
 	</tr>
@@ -44,7 +44,7 @@ $i=1;
 $sql=mysqli_query($con,"select * from rooms");
 while($res=mysqli_fetch_assoc($sql))
 {
-$id=$res['room_id'];	
+$id=$res['room_no'];	
 $img=$res['image'];
 $path="../image/rooms/$img";
 ?>
@@ -59,7 +59,7 @@ $path="../image/rooms/$img";
 		<td><a href="dashboard1.php?option=update_room&id=<?php echo $id; ?>"><span class="glyphicon glyphicon-pencil">a</span></a></td>
 
 		
-		<td><a href="#" onclick="delRoom('<?php echo $id; ?>')"><span class="glyphicon glyphicon-remove" style='color:red'></span></a></td>
+		<td><a href="#" onclick="delRoom('<?php echo $id; ?>')"><span class="glyphicon glyphicon-remove" style='color:red'></span>A</a></td>
 	</tr>	
 <?php 	
 }

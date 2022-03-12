@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #3cb371;;
+    --primary-color: #3cb371;
     --secondary-color: DodgerBlue;
   }
   
@@ -86,16 +86,10 @@
     background: var(--secondary-color);
   }
   
-  #navbar ul li:first-child {
-    background-color: var(--primary-color);
-  }
-  
-  #navbar ul li:first-child a {
-    color: #fff;
-  }
 
   .login{
       float: right;
+      margin-right: 2rem;
   }
   
     /*To style container in index*/
