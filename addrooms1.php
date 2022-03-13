@@ -15,9 +15,27 @@ if(isset($add))
 	}
 }
 ?>
+<style>
+	table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin-left:15%;
+  border: 2px solid black;
+}
+
+th, td {
+border-collapse: collapse;
+  text-align: left;
+  padding: 8px;
+  border: 2px solid black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
 
 <form method="post" enctype="multipart/form-data">
-<table class="table table-bordered">
+<table class="table table-bordered" border="1">
 	
 	<tr>	
 		<th>Room No</th>

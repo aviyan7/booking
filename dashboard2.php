@@ -51,23 +51,23 @@
 </ul>
 </div>
 
-<div class="main">
+<!-- <div class="main">
     <div class="topbar">
         <div class="toggle"></div>
         <div class="user">
             <img src="../images/A.jpg">
         </div>
     </div>
-<div>
+<div> -->
 
-<script>
+<!-- <script>
 function toggleMenu(){
     let toggle = document.querySelector('.toggle');
     let navigation = document.querySelector('.navigation');
     toggle.classList.toggle('active');
     navigation.classList.navigation('active');
 }
-</script>
+</script> -->
 
 <?php
 @$opt=$_GET['option'];
@@ -116,7 +116,7 @@ function toggleMenu(){
     <div class="cardHeader">
       <h2>Hello</h2>
 ` </div>
-<table border="1" cellpadding="400" cellspacing="5">
+<table border="2px" cellpadding="400" cellspacing="5" style="color:'solid black' ">
   <thead>
     <tr>
     <th>SN</th>

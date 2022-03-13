@@ -1,9 +1,9 @@
 <?php 
 session_start();
-if($_SESSION['create_account_logged_in']!="")
-{
-    header('location:roombooking.php');
-}
+// if($_SESSION['create_account_logged_in']!="")
+// {
+//     header('location:userlogin.php');
+// }
 error_reporting(1);
 require('connection1.php');
 extract($_REQUEST);
@@ -16,15 +16,19 @@ if(isset($log))
 	else
 	{
 	$sql=mysqli_query($con,"select * from create_account where email='$id' && password='$pass' ");
+    while ($row1 = mysqli_fetch_array($sql)) {
+        $eid = $row1['id'];
+		}
+
 		if(mysqli_num_rows($sql))
 		{
-		$_SESSION['create_account_logged_in']=$id;	
-		header('location:roombooking.php');	
-		}
+        $_SESSION['create_account_logged_in']=$id;
+		header('location:roombooking.php?id='.$eid);   
+    }
 		else
 		{
 		$error= "<h3 style='color:red'>Invalid login details</h3>";	
-		}	
+		}
 	}
 }
 if(isset($back))
@@ -59,4 +63,8 @@ include('menu1.php');
         <span>Remember me</span> <br>
         <a href="createuser.php">Create an User</a> 
     </form>  
-</div>    
+</div> 
+
+<?php
+
+    ?>

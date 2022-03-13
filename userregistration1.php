@@ -5,12 +5,13 @@
   border-spacing: 0;
   width: 80%;
   margin-left:15%;
-  border: 1px solid #ddd;
+  border: 1px solid black;
 }
 
 th, td {
   text-align: left;
   padding: 8px;
+  border: 1px solid black;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}

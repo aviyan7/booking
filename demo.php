@@ -1,6 +1,7 @@
 <?php
-include('config.php');
-$name = $_POST['name'];
-$address = $_POST['address'];
-$insertQuery = "Insert into user set name = $name address= $address";
-
+$sql1=mysqli_query($con,"select * from create_account where email='$id' ");
+while ($row = mysqli_num_rows($sql)){
+    $eid = $_row['id'];
+    echo $eid;
+}
+    ?>

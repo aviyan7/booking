@@ -13,12 +13,14 @@
   border-spacing: 0;
   width: 80%;
   margin-left:15%;
-  border: 1px solid #ddd;
+  border: 2px solid black;
 }
 
 th, td {
+	border-collapse: collapse;
   text-align: left;
   padding: 8px;
+  border: 2px solid black;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
@@ -27,7 +29,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <table class="table">
 	<h1 style='margin-left:10em'>Room Details</h1><hr>
 	<tr>
-	<td colspan="8"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Add New Rooms</a></td>
+	<td colspan="8"><a href="dashboard1.php?option=add_rooms"><button>Add New Rooms</button></a></td>
 	</tr>
 	<tr style="height:40">
 		<th>Sr No</th>
@@ -46,11 +48,11 @@ while($res=mysqli_fetch_assoc($sql))
 {
 $id=$res['room_no'];	
 $img=$res['image'];
-$path="../image/rooms/$img";
+$path="images/$img";
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
-		<td><img src="<?php echo $path;?>" width="50" height="50"/></td>
+		<td><img src="<?php echo $path;?>" width="250px" height="150px"/></td>
 		<td><?php echo $res['room_no']; ?></td>
 		<td><?php echo $res['type']; ?></td>
 		<td><?php echo $res['price']; ?></td>

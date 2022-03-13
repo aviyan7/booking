@@ -70,7 +70,7 @@ else
   }
   else if($opt=="log_out")
   {
-    header('location:index1.php');
+    header('location:userlogout.php');
   }
 
 }

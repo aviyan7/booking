@@ -4,15 +4,38 @@ error_reporting(1);
 include('connection1.php');
 ?>
 <style>
-	table{
-		margin-left:15%;
+	*{
+		margin: 0;
+		padding: 0;
 	}
 	.top{
-		margin-left:15%;
+		margin-left:35%;
+		margin-bottom:0.5%;
 	}
+
+	table {
+  margin-left:15%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin-left:15%;
+  border: 2px solid black;
+}
+
+th, td {
+border-collapse: collapse;
+  text-align: left;
+  padding: 8px;
+  border: 2px solid black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
 	</style>
-<table class="table" border="1px solid;">
+<table class="table">
 	<h1 class="top">Room Booking Details</h1><hr>
+	<thead>
+		<a href="roombooking.php"><button class="top">Book Room</button></a>
+</thead>
 	<tr>
 		<th>SN</th>
 		<th>Name</th>
@@ -24,30 +47,34 @@ include('connection1.php');
 		<th>Check Out Time</th>
 		<th>Check Out Date</th>
 		<th>Occupancy</th>
-		<th>Cancel Order</th>
+		<th>Action</th>
 	</tr>
 
 <?php 
-$i=1;
 $sql=mysqli_query($con,"select * from room_booking_details");
-while($res=mysqli_fetch_assoc($sql))
+if (mysqli_num_rows($sql) > 0)
 {
-$oid=$res['no'];
+while($res=mysqli_fetch_array($sql))
+{
+$oid=$res['id'];
 ?>
 <tr>
-		<td><?php echo $i;$i++; ?></td>
-		<td><?php echo $res['name']; ?></td>
-		<td><?php echo $res['email']; ?></td>
-		<td><?php echo $res['phone']; ?></td>
-		<td><?php echo $res['address']; ?></td>
-		<td><?php echo $res['room_type']; ?></td>
-		<td><?php echo $res['check_in_date']; ?></td>
-		<td><?php echo $res['check_in_time']; ?></td>
-		<td><?php echo $res['check_out_date']; ?></td>
-		<td><?php echo $res['occupancy']; ?></td>
-		<td><a style="color:red" href="cancelorder1.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
+		<td><?php echo $res['0']; ?></td>
+		<td><?php echo $res['1']; ?></td>
+		<td><?php echo $res['2']; ?></td>
+		<td><?php echo $res['3']; ?></td>
+		<td><?php echo $res['4']; ?></td>
+		<td><?php echo $res['5']; ?></td>
+		<td><?php echo $res['6']; ?></td>
+		<td><?php echo $res['7']; ?></td>
+		<td><?php echo $res['8']; ?></td>
+		<td><?php echo $res['9']; ?></td>
+		<td><a href="editorder.php?id=<?php echo $oid;?>">E</a>&emsp;<a style="color:red" href="cancelorder.php?id=<?php echo $oid; ?>">C</a></td>
 	</td>
-	</tr>	
+	</tr>
+	<?php
+}
+?>	
 </table>
 <?php
 }

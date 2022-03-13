@@ -2,7 +2,7 @@
 session_start();
 error_reporting(1);
 include('connection1.php');
-// include('menu1.php');
+//  include('menu1.php');
 extract($_REQUEST);
 if(isset($save))
 {
@@ -24,17 +24,68 @@ if(isset($save))
 ?>
 <style>
     #error{
-        margin-top:5rem;
+        margin-top:15rem;
     }
+
+    .create {
+  	width: 450px;
+  	background-color: #ffffff;
+  	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  	margin: 100px auto;
+}
+.create h1 {
+  	text-align: center;
+  	color: #5b6574;
+  	font-size: 24px;
+  	padding: 20px 0 20px 0;
+  	border-bottom: 1px solid #dee0e4;
+}
+.create form {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding-top: 20px;
+}
+.create form label {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	width: 50px;
+  	height: 50px;
+  	background-color: #3274d6;
+  	color: #ffffff;
+}
+.create form input[type="password"], .create form input[type="text"] {
+  	width: 310px;
+  	height: 50px;
+  	border: 1px solid #dee0e4;
+  	margin-bottom: 20px;
+  	padding: 0 15px;
+}
+.create form input[type="submit"] {
+  	width: 100%;
+  	padding: 15px;
+ 	margin-top: 20px;
+  	background-color: #3274d6;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+}
+.create form input[type="submit"]:hover {
+	background-color: #2868c7;
+  	transition: background-color 0.2s;
+}
     </style>
 
-<div class="container-fluid"> <!-- Primary Id-->
+<!-- <div class="container-fluid"> 
   <div class="container">
     <div class="row">
       <center><h1 style="border-radius:50px;display:inline-block;"><b><font color="#080808">Create New Account?</font></b></h1></center>
-       <center><?php echo @$msg;?></center><br>
+       <center></center><br>
       <div class="col-sm-6 ">
-        <form class="form-horizontal"method="post">
+        <form class="form-horizontal" method="post">
           <div class="form-group">
 
             <div class="control-label col-sm-5"><h4>Name :</h4></div>
@@ -94,7 +145,49 @@ if(isset($save))
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<div class="create">
+			<h1>Create New User</h1>
+      <div class="error"><?php echo @$msg;?></div>
+			<form action="#" method="post">
+
+        <div>
+            Name:
+        <input type="text" name="fname" placeholder="Enter Your Name"required>
+        </div>
+
+         <div>
+            Email:
+              <input type="text" name="mail" placeholder="Enter Your Email" required>
+          </div>
+
+          <div>
+          Password:
+              <input type="password" name="Passw"  placeholder="Enter Your Password" required>
+          </div>
+       
+          <div>
+          Mobile:
+              <input type="text" name="mobi" placeholder="Enter Your Mobile Number" required>
+          </div>
+ 
+          <div>
+            Address:
+          <input type="text" name="addr" placeholder="Enter Your Address"required>
+           </div>
+
+           <div>
+            Gender: 
+              <input type="radio" name="gend"value="male"required><b>Male</b>&emsp;
+              <input type="radio" name="gend"value="female"required><b>Female</b>&emsp;
+              <input type="radio" name="gend"value="other"required><b>Other</b>
+          </div>
+
+				<input type="submit" value="Submit" name="save">
+			</form>
+      <input type="button" value="Back" onclick="history.back()"/>
+		</div>
 <?php
     include('footer.php');
 ?>
