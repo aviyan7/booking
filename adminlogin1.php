@@ -3,8 +3,10 @@ session_start();
 error_reporting(1);
 require('connection1.php');
 extract($_REQUEST);
-if(isset($log))
+if($_SERVER["REQUEST_METHOD"] == "POST")
 {
+    $id = $_POST['id'];
+    $pass = $_POST['pass'];
 	if($id=="" || $pass=="")
 	{
 	$error= "<h3 style='color:red'>Fill all details</h3>";	
@@ -14,7 +16,8 @@ if(isset($log))
 	$sql=mysqli_query($con,"select * from admin where username='$id' && password='$pass' ");
 		if(mysqli_num_rows($sql))
 		{
-		$_SESSION['admin_logged_in']=$id;	
+		// $_SESSION['admin_logged_in']=$id;
+        $_SESSION['admin_logged_in']=$id;
 		header('location:dashboard1.php');	
 		}
 		else
@@ -37,12 +40,10 @@ if(isset($back))
     <link rel="stylesheet" type="text/css" href="adminstyle1.css">    
 </head>    
 <body>  
-    <?php include('menu1.php'); ?>  
-    <?php include('footer.php'); ?>
     <h2>Admin Login</h2>    
     <div class="adlogin">  
     <?php echo @$error;?> 
-    <form id="login" method="post" action="#">  
+    <form id="login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
         <div class="form-group">  
         <label><b>User Name</b></label>    
         <input type="text" name="id" id="id" class="form-control" placeholder="Enter your email" required>    

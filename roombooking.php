@@ -1,31 +1,44 @@
 <?php 
-include('menu1.php');
+// include('menu1.php');
 include('connection1.php');
-if($eid=="" || $id="")
-{
-header('location:userlogin.php');
-}
-$fid = $_GET['id'];
-echo $fid;
-
-$sql1= mysqli_query($con,"select * from create_account where id='$fid' "); 
-while($row = mysqli_fetch_array($sql1)){
-  $name = $row['name'];
-  $mail = $row['email'];
-  $phone = $row['mobile'];
-  $address = $row['address'];
-  echo $mail;
-}
-
-// $row = mysqli_fetch_array($result);
-// echo $result['email'];
-// print_r($result);
 extract($_REQUEST);
 error_reporting(1);
+$id = $_GET['id'];
+$aid = $_GET['aid'];
+if($aid=="" and $id=="")
+{
+  header('location:userlogin.php');
+}
+else if($id="")
+{
+  header('location:adminlogin1.php');
+}
+else
+{
+  if($id!="")
+  {
+    $sql1= mysqli_query($con,"select * from create_account where id='$id' "); 
+    while($row = mysqli_fetch_array($sql1)){
+      $name = $row['name'];
+      $mail = $row['email'];
+      $phone = $row['mobile'];
+      $address = $row['address'];
+  }
+}
+  
+    $sql1= mysqli_query($con,"select * from admin where id='$aid' "); 
+    while($row = mysqli_fetch_array($sql1)){
+      $name = $row['username'];
+      $mail = $row['email'];
+      $phone = $row['mobile'];
+      $address = $row['address'];
+    }
+      
+
 if(isset($savedata))
 {
   $sql2= mysqli_query($con,"select * from room_booking_details where email='$mail' and room_type='$room_type' ");
-  if(mysqli_num_rows($sql2)>1) 
+  if(mysqli_num_rows($sql2)) 
   {
   $msg= "<h1 style='color:red'>You have already booked this room</h1>";    
   }
@@ -41,83 +54,6 @@ if(isset($savedata))
 }
 
 ?>
-<!-- <div class="container-fluid text-center"id="primary">
-  <h1>[ Room Booking Form ]</h1><br>
-  <div class="container">
-    <div class="row">
-      
-     <form class="form-horizontal" method="post">
-       <div class="col-sm-6">
-         
-           <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="control-label col-sm-5"><h4>Room Type:</h4></div>
-                  <div class="col-sm-7">
-                <select class="form-control" name="room_type"required>
-                  <option>Deluxe Room</option>
-                  <option>Luxurious Suite</option>
-                  <option>Standard Room</option>
-                  <option>Suite Room</option>
-                  <option>Twin Deluxe Room</option>
-               </select>
-              </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="control-label col-sm-5"><h4>check In Date :</h4></div>
-                  <div class="col-sm-7">
-                  <input type="date" name="cdate" class="form-control"required>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                 <div class="control-label col-sm-5"><h4>Check In Time:</h4></div>
-                   <div class="col-sm-7">
-                    <input type="time" name="ctime" class="form-control"required>
-                  </div>
-              </div>
-            </div>
-          </div>
-           <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="control-label col-sm-5"><h4>Check Out Date :</h4></div>
-                <div class="col-sm-7">
-                  <input type="date" name="codate" class="form-control"required>
-                </div> 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <label class="control-label col-sm-5"><h4 id="top">Occupancy :</h4></label>
-                <div class="col-sm-7">
-                  <div class="radio-inline"><input type="radio" value="single" name="Occupancy"required >Single</div>
-                  <div class="radio-inline"><input type="radio" value="twin" name="Occupancy" required>Double</div>
-                </div> 
-              </div>
-            </div>
-            <input type="submit"value="Submit" name="savedata" class="btn btn-danger"required/>
-          </div>
-        </div>
-        </form>
-        <input type="button" value="Back" onclick="history.back()"/>
-      </div>
-    </div>
-  </div>
-<?php
-include('footer.php')
-?> -->
 
 <style>
     #error{
@@ -186,7 +122,7 @@ include('footer.php')
     </style>
 
 <div class="create">
-			<h1>Room Booking</h1>
+			<h1>Room Booking<?php echo $aid; ?></h1>
       <div class="error"><?php echo @$msg;?></div>
 			<form action="#" method="post">
 
@@ -226,7 +162,10 @@ include('footer.php')
       <input type="button" value="Back" onclick="history.back()"/>
 		</div>
 
-<?php include ('footer.php'); ?>
+<?php 
+}
+
+include ('footer.php'); ?>
 
 
 

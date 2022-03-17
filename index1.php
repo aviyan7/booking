@@ -5,7 +5,6 @@ include('connection1.php');
 include('menu1.php');
 ?>
   <link rel="stylesheet" href="indexstyle1.css">
-<body >
 
 <div class="container" id="red" style="margin-top:60px;">    
   <h1>Welcome To <font color="#a6e22b;"><b>Booking.Com</b></font></h1><hr><br>

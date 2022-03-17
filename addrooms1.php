@@ -13,6 +13,7 @@ if(isset($add))
 	move_uploaded_file($_FILES['img']['tmp_name'],"../images/".$_FILES['img']['name']);
 	echo "Rooms added successfully";
 	}
+
 }
 ?>
 <style>
@@ -28,49 +29,67 @@ th, td {
 border-collapse: collapse;
   text-align: left;
   padding: 8px;
+  height: 4rem;
   border: 2px solid black;
+}
+
+input[type="text"]{
+   height: 2rem;
+  width: 45%;
+}
+
+textarea{
+	width:85%;
+	height: 6rem;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
 </style>
 
 <form method="post" enctype="multipart/form-data">
-<table class="table table-bordered" border="1">
-	
+	<h1 style='margin-left:10em'>Add New Rooms</h1><hr>
+<table class="table" border="1">
+	<tr>
+      
+     </tr>
 	<tr>	
 		<th>Room No</th>
-		<td><input type="text" name="rno"  class="form-control"/>
+		<td><input type="text" name="rno"/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Room Type</th>
-		<td><input type="text" name="type"  class="form-control"/>
+		<td><input type="text" name="type"/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Price</th>
-		<td><input type="text" name="price"  class="form-control"/>
+		<td><input type="text" name="price"/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Details</th>
-		<td><textarea name="details"  class="form-control"></textarea>
+		<td><textarea name="details"></textarea>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Images</th>
-		<td><input type="file" name="img"  class="form-control"/>
+		<td><input type="file" name="img"/>
 		</td>
 	</tr>
 	
 	<tr>
 		<td colspan="2">
-			<input type="submit" class="btn btn-primary" value="Add Room Details" name="add"/>
+			<input type="submit" value="Add" name="add"/>
 		</td>
 	</tr>
 </table> 
 </form>
+
+
+
+	

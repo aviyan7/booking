@@ -1,11 +1,10 @@
 <?php 
 session_start();
 extract($_REQUEST);
-include('connection1.php');
-$admin=$_SESSION['admin_logged_in'];	
-if($admin=="")
+include('connection1.php');	
+if($_SESSION['admin_logged_in']=="")
 {
-	header('location:index1.php');
+	header('location:adminlogin1.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,10 +17,10 @@ if($admin=="")
   </head>
   <body>
     <div class="sidebar">
-          <a>Welcome <?php echo $admin; ?></a>
+          <a>Welcome <?php echo $_SESSION['admin_logged_in']; ?></a>
             <a href="dashboard1.php?option=update_password">Update Password</a>
             <a href="dashboard1.php?option=rooms">Room</a>
-            <a href="dashboard1.php?option=add_rooms">Add Rooms</a>
+      <a href="dashboard1.php?option=add_rooms">Add Rooms</a>
 			<a href="dashboard1.php?option=booking_details">Booking Details</a>
       <a href="dashboard1.php?option=user_registration">Registered Users</a>
       <a href="dashboard1.php?option=log_out">Log out</a>

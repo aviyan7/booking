@@ -11,12 +11,9 @@ header('location:dashboard1.php?option=rooms');
 }
 
 ?>
-<html>
-	<head>
-   <title></title>
-   <link rel="stylesheet" href="updateroomstyle.css">
-</head>
-<body>
+
+<link rel="stylesheet" href="updateroomstyle.css">
+
 <div class="container">
 	<form method="post" enctype="multipart/form-data" class="updateForm">
 <div class="row">
@@ -41,5 +38,3 @@ header('location:dashboard1.php?option=rooms');
 </form>
 </div>
 
-</body>
-</html>

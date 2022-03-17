@@ -2,20 +2,13 @@
 session_start();
 error_reporting(1);
 include('connection1.php');
+include('menu1.php');
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Booking.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 <body style="margin-top:50px;">
-	<?php
-      include('menu1.php');
-  ?><br><br><br>
+<br>
 <?php 
+// $_SESSION['iid'] = $id;
 $room_no = $_GET['room_no'];
 $sql=mysqli_query($con,"select * from rooms where room_no='$room_no' ");
 $res=mysqli_fetch_assoc($sql);
@@ -23,13 +16,14 @@ $res=mysqli_fetch_assoc($sql);
 
 		<h2 class="Ac_Room_Text"><?php echo $res['type']; ?></h2>
     <h3 class="Ac_Room_Text"><?php echo $res['price']; ?></h3>
+    <h3><?php echo $room_no; ?> Hw</h3>
 		<p class="text-justify">
       <?php echo $res['details']; ?>
 </p>
     <div class="row">
       <!-- <h2>Amenities & Facilities</h2> -->
       <!-- <img src="image/icon/wifi.png"class="img-responsive"> -->
-      <a href="roombooking.php"><button>Book Now</button></a>
+      <a href="checklogin.php?room_no=<?php echo $room_no;?>"><button>Book Now</button></a>
       <a href="index1.php"><button>Back</button></a>
       </div>
 	</div>
@@ -41,7 +35,6 @@ $res=mysqli_fetch_assoc($sql);
 					<div class="panel-body-right text-center">
     <!--Fatch Mysql Database Select Query Room Details -->
 						<?php
-            include('connection1.php');
             $sql1=mysqli_query($con,"select * from rooms");
            while($result1= mysqli_fetch_assoc($sql1))
            {

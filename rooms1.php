@@ -29,7 +29,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <table class="table">
 	<h1 style='margin-left:10em'>Room Details</h1><hr>
 	<tr>
-	<td colspan="8"><a href="dashboard1.php?option=add_rooms"><button>Add New Rooms</button></a></td>
+	<td colspan="8"><a href="dashboard1?option=addrooms1.php"><button>Add New Rooms</button></a></td>
 	</tr>
 	<tr style="height:40">
 		<th>Sr No</th>

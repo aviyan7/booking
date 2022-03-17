@@ -1,7 +1,8 @@
 <?php 
 session_start();
-$eid=$_SESSION['create_account_logged_in'];
 error_reporting(1);
+$id = $_GET['id'];
+$_SESSION['id'] = $id;
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,10 +15,10 @@ error_reporting(1);
   <ul>
   <li><a href="index1.php">Home</a></li>
   <li><a href="about.php">About</a></li>
-  <li><a href="gallery1.php">Gallery</a></li>
+  <li><a href="gallery.php">Gallery</a></li>
 
     <?php
-     if($_SESSION['create_account_logged_in']!="")
+     if($_SESSION['id']!="")
      {
     ?>
     <li class="login">

@@ -1,58 +1,63 @@
 <?php 
 session_start();
-// if($_SESSION['create_account_logged_in']!="")
-// {
-//     header('location:userlogin.php');
-// }
 error_reporting(1);
-require('connection1.php');
+include('connection1.php');
 extract($_REQUEST);
-if(isset($log))
-{
-	if($id=="" || $pass=="")
-	{
-	$error= "<h3 style='color:red'>Fill all details</h3>";	
-	}		
-	else
-	{
-	$sql=mysqli_query($con,"select * from create_account where email='$id' && password='$pass' ");
-    while ($row1 = mysqli_fetch_array($sql)) {
-        $eid = $row1['id'];
-		}
 
-		if(mysqli_num_rows($sql))
-		{
-        $_SESSION['create_account_logged_in']=$id;
-		header('location:roombooking.php?id='.$eid);   
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $eid = $_POST['id'];
+    $pass = $_POST['pass'];
+
+    $sql = "SELECT * FROM create_account WHERE email = '$eid' and password = '$pass'";
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_assoc($result);
+    $count = mysqli_num_rows($result);
+    $f = $_GET['room_no'];
+    echo $f;
+    if($count == 1) {
+        $id = $row['id'];
+        echo $f;
+        // $error= "<h3 style='color:red'>alid login details</h3>".$f;	
+        if($f!=NULL)
+        {
+            header('location:roombooking.php?id='.$id);  
+        }
+        else
+        {
+            header('location:userprofile.php?id='.$id);  
+        }
+            
     }
-		else
-		{
-		$error= "<h3 style='color:red'>Invalid login details</h3>";	
-		}
-	}
+
+        
+    else {
+        $error = "<h3 style='color:red'>Your Login Name or Password is invalid</h3>";
+    }
 }
+    
+
 if(isset($back))
 {
     header('location:index1.php');
 }
 
-include('menu1.php'); 
- include('footer.php'); 
+// include('menu1.php'); 
+
 ?>
 
  
 <link rel="stylesheet" href="adminstyle1.css">
  <h2>User Login</h2>    
     <div class="adlogin">  
-	<?php echo @$error;?>
-    <form id="login" method="post" action="#">  
+	<?php echo $error;?>
+    <form id="login" method="POST" action="#">  
         <div class="form-group">  
         <label><b>Email</b></label>    
         <input type="text" name="id" id="id" class="form-control" placeholder="Enter your email" required>    
         <br><br></div> 
         <div class="form-group">    
         <label><b>Password</b></label>    
-        <input type="Password" name="pass" id="pass" placeholder="Enter your Password" required>    
+        <input type="Password" name="pass" id="pass" class="form-control" placeholder="Enter your Password" required>    
         <br><br></div>
         <div class="form-group"> 
         <input type="submit" value="Login" name="log" id="log" required>       
@@ -60,11 +65,11 @@ include('menu1.php');
      </div> 
      <br>
         <input type="checkbox" id="check">    
-        <span>Remember me</span> <br>
+        <span>Remember me<?php echo $f; ?></span> <br>
         <a href="createuser.php">Create an User</a> 
     </form>  
 </div> 
 
 <?php
-
+ include('footer.php'); 
     ?>

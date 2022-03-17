@@ -34,7 +34,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <table class="table">
 	<h1 class="top">Room Booking Details</h1><hr>
 	<thead>
-		<a href="roombooking.php"><button class="top">Book Room</button></a>
+		<a href="roombooking.php?aid=1"><button class="top">Book Room</button></a>
 </thead>
 	<tr>
 		<th>SN</th>
