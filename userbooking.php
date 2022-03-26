@@ -1,19 +1,33 @@
 <?php
-include('connection1.php');
+session_start();
+error_reporting(1);
+include('./includes/header.php');
+if (!isset($_SESSION['ID'])) {
+	header("Location:userlogin.php");
+	exit();
+ }
+ $id = $_SESSION['ID'];
+ $sql = "SELECT * FROM create_account WHERE id = '$id' ";
+   $result = mysqli_query($con,$sql);
+ $row = mysqli_fetch_assoc($result);
+ $id = $row['email'];
 extract($_REQUEST);
+
 ?>
 
 
 <style>
 	table{
 		margin-left:15%;
+		margin-top: 1rem;
 	}
 	.top{
+		margin-top: 5rem;
 		margin-left:15%;
 	}
 	</style>
 <table class="table" border="1px solid;">
-	<h1 class="top">Room Booking Details</h1><hr>
+	<h1 class="top">User Room Booking</h1><hr>
 	<tr>
 		<th>SN</th>
 		<th>Name</th>
@@ -30,7 +44,7 @@ extract($_REQUEST);
 
 <?php 
 $i=1;
-$sql=mysqli_query($con,"select * from user_room_booking_details where email='$oid' ");
+$sql=mysqli_query($con,"select * from room_booking_details where email='$id' ");
 while($res=mysqli_fetch_assoc($sql))
 {
 $oid=$res['id'];
@@ -46,7 +60,7 @@ $oid=$res['id'];
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['occupancy']; ?></td>
-		<td><a style="color:red" href="cancelorder1.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
+		<td><a style="color:red" href="cancelorder.php?booking_id=<?php echo $oid; ?>"><i class="fa fa-trash"></i></a></td>
 	</td>
 	</tr>
 <?php 	

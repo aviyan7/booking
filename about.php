@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>About Us</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+
 <body style="margin-top:50px;">
 <?php
-      include('menu1.php')
+      include('./includes/header.php');
   ?>
   <style>
 div{
@@ -30,7 +24,6 @@ Our hotel booking services also include reservation of hill station hotels, luxu
 
 
 <?php
-  include('footer.php')
+  include('./includes/footer.php')
 ?>
-</body>
-</html>
+

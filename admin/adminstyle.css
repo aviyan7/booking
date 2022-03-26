@@ -1,0 +1,246 @@
+/* Start of Admin Login */
+
+:root {
+  --primary-color: #3cb371;
+  --secondary-color: DodgerBlue;
+}
+
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    /* background-color: #ddd; */
+    font-family: 'Arial';  
+}  
+.adlogin{  
+        width: 300px;  
+        overflow: hidden;  
+        margin: auto;  
+        /* margin: 15 0 0 450px;   */
+        padding: 80px;  
+        background: #3cb371;
+        border-radius: 15px ;        
+}  
+h3{  
+    text-align: center;  
+    color: black;  
+    margin-top: 2rem;
+    padding: 10px;  
+    font-size: 35px;
+}  
+h5{  
+  text-align: center;   
+  margin: 0;
+  padding: 0;  
+  font-size: 25px;
+} 
+label{  
+    color: black;  
+    font-size: 17px;  
+} 
+ #login{
+     margin-left: 3rem;
+ }
+#pass, #id{  
+    width: 250px;  
+    height: 40px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 5px;  
+}  
+ 
+#log, #back{  
+    width: 80px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 8px;  
+    color: black; 
+    background-color: whitesmoke;
+    margin-left: 2rem;  
+}  
+
+span{  
+    color: white;  
+    font-size: 17px;  
+}  
+
+/* End of Admin Login */
+
+/* Start of Admin Dashboard */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #3cb371;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: DodgerBlue;
+  color: black;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+/* End of Admin Dashboard */
+
+/* Start of Admin Update Password */
+input[type=password], select{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+   background-color: black; 
+  color: whitesmoke;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+   float: center; 
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.updateForm{
+ margin-left: 40%;
+}
+
+.btn{
+    margin-top: 1%;
+    margin-left: 18%;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* End of Admin Update Password */
+
+/* Start of Admin Rooms, Booking Details */
+.top{
+  margin-left:35%;
+  margin-bottom:0.5%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin-left:18%;
+  border: 2px solid black;
+}
+
+th, td {
+	border-collapse: collapse;
+  text-align: left;
+  padding: 8px;
+  border: 2px solid black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+/* End of Admin Rooms, Booking Details */
+
+/* Start of Edit */
+.create {
+  width: 550px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 50px auto;
+}
+.create h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.create form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.create form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.create form input[type="time"], .create form input[type="date"], .create form input[type="select"], .create form input[type="text"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.create form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+ margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.create form input[type="submit"]:hover {
+background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+
+/* End of Edit */

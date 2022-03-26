@@ -1,28 +1,44 @@
 <?php
-session_start();
-error_reporting(1);
-include('connection1.php');
-//  include('menu1.php');
 extract($_REQUEST);
-if(isset($save))
+ include('includes/header.php');
+// include('includes/connection.php');
+
+if(isset($_POST['save']))
 {
-  $sql= mysqli_query($con,"select * from create_account where email='$email' ");
+
+    $fname = $con->real_escape_string($_POST['fname']);
+    $mail  = $con->real_escape_string($_POST['mail']);
+    $pass  = $con->real_escape_string(md5($_POST['pass']));
+    $mobi  = $con->real_escape_string($_POST['mobi']);
+    $addr  = $con->real_escape_string($_POST['addr']);
+    $gend  = $con->real_escape_string($_POST['gend']);
+    $role  = $con->real_escape_string($_POST['role']);
+
+    // echo $role; echo $pass; 
+    
+  $sql= mysqli_query($con,"select * from create_account where email='$mail' ");
   if(mysqli_num_rows($sql))
   {
   $msg= "<h1 style='color:red'> Account already exists</h1>";    
   }
   else
   {
-      $sql="insert into create_account(id,name,email,password,mobile,address,gender) values('','$fname','$mail','$Passw','$mobi','$addr','$gend')";
+      $sql="insert into create_account(id,name,email,password,mobile,address,gender,role) values('','$fname','$mail','$pass','$mobi','$addr','$gend','$role')";
    if(mysqli_query($con,$sql))
    {
-   $msg= "<h1 style='color:green'>Data Saved Successfully</h1>"; 
-   header('location:userprofile.php'); 
+   $msg= "<h1 style='color:green'>Data Saved Successfully</h1>";
+   if($role=="user") 
+   {
+    header('location:userprofile.php'); 
    }
+  //  header('location:dashboard.php');
+   }
+
   }
+
 }
 ?>
-<style>
+<!-- <style>
     #error{
         margin-top:15rem;
     }
@@ -77,7 +93,7 @@ if(isset($save))
 	background-color: #2868c7;
   	transition: background-color 0.2s;
 }
-    </style>
+    </style> -->
 
 <!-- <div class="container-fluid"> 
   <div class="container">
@@ -164,7 +180,7 @@ if(isset($save))
 
           <div>
           Password:
-              <input type="password" name="Passw"  placeholder="Enter Your Password" required>
+              <input type="password" name="pass"  placeholder="Enter Your Password" required>
           </div>
        
           <div>
@@ -177,18 +193,26 @@ if(isset($save))
           <input type="text" name="addr" placeholder="Enter Your Address"required>
            </div>
 
-           <div>
+           <div class="r">
             Gender: 
               <input type="radio" name="gend"value="male"required><b>Male</b>&emsp;
               <input type="radio" name="gend"value="female"required><b>Female</b>&emsp;
               <input type="radio" name="gend"value="other"required><b>Other</b>
           </div>
 
-				<input type="submit" value="Submit" name="save">
+          <div class="r1">
+            Role:
+          <select name="role" required="">
+              <option value="">Select Role</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+				<input type="submit" value="Submit" name="save" id="sub">
 			</form>
-      <input type="button" value="Back" onclick="history.back()"/>
+      <input type="button" value="Back" onclick="history.back()" id="baack"/>
 		</div>
-<?php
-    include('footer.php');
-?>
+
+
+  
 

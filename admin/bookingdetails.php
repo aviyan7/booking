@@ -1,9 +1,9 @@
 <?php 
 //  session_start();
 error_reporting(1);
-include('connection1.php');
+include('./admin/header.php');
 ?>
-<style>
+<!-- <style>
 	*{
 		margin: 0;
 		padding: 0;
@@ -30,7 +30,7 @@ border-collapse: collapse;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
-	</style>
+	</style> -->
 <table class="table">
 	<h1 class="top">Room Booking Details</h1><hr>
 	<thead>
@@ -69,7 +69,7 @@ $oid=$res['id'];
 		<td><?php echo $res['7']; ?></td>
 		<td><?php echo $res['8']; ?></td>
 		<td><?php echo $res['9']; ?></td>
-		<td><a href="editorder.php?id=<?php echo $oid;?>">E</a>&emsp;<a style="color:red" href="cancelorder.php?id=<?php echo $oid; ?>">C</a></td>
+		<td><a href="editorder.php?id=<?php echo $oid;?>"><i class="fa fa-edit"></i></a>&emsp;<a style="color:red" href="../cancelorder.php?id=<?php echo $oid; ?>"><i class="fa fa-trash"></i></a></td>
 	</td>
 	</tr>
 	<?php

@@ -99,8 +99,7 @@ div.desc {
 
 <link rel="stylesheet" href="indexstyle1.css">
 <?php 
-     include('connection1.php');
-     include('menu1.php');
+     include('./includes/header.php');
 
 ?>
      <div class="container" style="margin-top:60px;">    
@@ -125,5 +124,5 @@ div.desc {
 <div class="clearfix"></div>
 
 <?php 
-include('footer.php');
+include('./includes/footer.php');
 ?>

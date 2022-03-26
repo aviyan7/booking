@@ -1,6 +1,7 @@
 <?php 
 session_start();
-session_unset();
 session_destroy();
-header('location:index1.php'); 
+session_unset();
+header('location:index.php'); 
+die();
 ?>

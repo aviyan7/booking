@@ -11,8 +11,8 @@
 /*To style container in index*/
 
 :root {
-  --primary-color: #344a72;
-  --secondary-color: chocolate;
+  --primary-color: #3cb371;
+  --secondary-color: DodgerBlue;
 }
 
 * {
@@ -26,6 +26,14 @@ body {
   background-color: #f4f4f4;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f8f8f8;
+}
+
+/* #navbar{
+  left:0;
+  top: 0;
+  position: fixed;
+  background-color: var(--primary-color);
+  width: 100%;
 }
 
 #navbar ul {
@@ -42,11 +50,11 @@ body {
 #navbar ul li a {
   color: #333;
   text-decoration: none;
-}
+} */
 
 /* Hide Nested ul By Default */
 
-#navbar ul li ul {
+/* #navbar ul li ul {
   display: none;
 }
 
@@ -62,7 +70,7 @@ body {
 
 /* Nested Dropdown Show */
 
-#navbar ul li:hover ul {
+/* #navbar ul li:hover ul {
   display: block;
   position: absolute;
   left: 0;
@@ -104,13 +112,13 @@ body {
 
 #navbar ul li:first-child a {
   color: #fff;
-}
+} */
 
   /*To style container in index*/
-  .container{
+  /* .container{
     margin-top: 5em;
     text-align: center;
-  }
+  }  */
 
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 /* @media screen and (max-width: 600px) {
@@ -136,3 +144,384 @@ body {
       text-align: left;
     }
   } */
+
+
+  #navbar{
+      left:0;
+      top: 0;
+      position: fixed;
+      background-color: var(--primary-color);
+      width: 100%;
+  }
+  #navbar ul {
+    list-style: none;
+  }
+  
+  #navbar ul li {
+    color: whitesmoke;
+    display: inline-block;
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+  }
+  
+  #navbar ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  /* Hide Nested ul By Default */
+  
+  #navbar ul li ul {
+    display: none;
+  }
+  
+  #navbar ul li:hover {
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  #navbar ul li:hover a {
+    color: black;
+  }
+  
+  /* Nested Dropdown Show */
+  
+  #navbar ul li:hover ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    margin-top: 1rem;
+  }
+  
+  #navbar ul li:hover ul li {
+    display: block;
+    background: #e7e7e7;
+  }
+  
+  #navbar ul li:hover ul li a {
+    color: #333;
+  }
+  
+  #navbar ul li:hover ul li:hover {
+    background: #e0e0e0;
+    color: inherit;
+  }
+  
+  #navbar ul li:hover ul li span {
+    float: right;
+    color: #fff;
+    background: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 5px;
+  }
+  
+  #navbar ul li:hover ul li:hover span {
+    background: var(--secondary-color);
+  }
+  
+
+  .login{
+      float: right;
+      margin-right: 2rem;
+  }
+  
+    /*To style container in index*/
+     .container{
+      margin-top: 5em;
+      text-align: center;
+    } 
+
+    /*Footer style*/
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: var(--primary-color);
+      color: whitesmoke;
+      text-align: center;
+    }
+
+    .footer-bottom {
+      padding: 1rem 1rem 1rem 1rem;
+    }
+
+    /*End of Footer style*/
+
+    /*Start Index style and Room details*/
+
+    div.gallery {
+      border: 1px solid #ccc;
+    }
+    
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+
+    div.desc1 {
+      padding: 15px;
+      text-align: center;
+    }
+   
+    .img {
+      padding: 5px 30px;
+      float: left;
+      width: 25%;
+      margin-bottom: 2.5rem;
+    }
+
+    .img1 {
+      padding: 5px 30px;
+      width: 45%;
+      margin-left: 10%;
+      margin-bottom: 1.5rem;
+    }
+  
+    .rooms{
+      width: 100px;  
+      height: 30px;   
+      background: var(--primary-color); 
+      color:whitesmoke;
+      margin-left: 5rem; 
+      margin-bottom: 0.5rem;
+    }
+
+    .roomtype
+    {
+      width: 100%;
+      height: 10%;
+      margin-bottom: 0.5rem;
+    }
+
+    .type{
+      margin-bottom: 5rem;
+    }
+    
+    @media only screen and (max-width: 700px) {
+      .img {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .img {
+        width: 100%;
+      }
+    }
+    
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /*End of Index style and Room Details*/
+
+/*Start of Login style*/
+.adlogin{  
+  width: 510px;  
+  overflow: hidden;  
+  margin-top: 2rem;  
+  margin-left: 33%;
+  padding: 80px;  
+  background: #3cb371;
+  border-radius: 15px ;        
+}  
+h2{  
+text-align: center;  
+color: black;  
+margin-top: 5rem;
+padding: 10px;  
+font-size: 35px;
+}  
+h5{  
+text-align: center;   
+margin: 0;
+padding: 0;  
+font-size: 25px;
+} 
+label{  
+color: black;  
+font-size: 17px;  
+} 
+#login{
+margin-left: 3rem;
+}
+#id{  
+width: 250px;  
+height: 40px;  
+border: none;  
+border-radius: 3px;  
+padding-left: 5px;
+margin-left: 41px;    
+}  
+
+#pass{  
+  width: 250px;  
+  height: 40px;  
+  border: none;  
+  border-radius: 3px;  
+  padding-left: 5px;
+  margin-left: 8px;    
+  } 
+
+#log{  
+width: 80px;  
+height: 30px;  
+border: none;  
+border-radius: 8px;  
+color: black; 
+background-color: whitesmoke;
+margin-left: 7rem;  
+}  
+
+#back{  
+  width: 80px;  
+  height: 30px;  
+  border: none;  
+  border-radius: 8px;  
+  color: black; 
+  background-color: whitesmoke;
+  margin-left: 3rem;  
+  }  
+
+  /*Edit User */
+  #log1{
+    width: 80px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 8px;  
+    color: black; 
+    background-color: var(--primary-color);
+    /* margin-left: 1rem;   */
+    }
+
+    #back1{
+      width: 80px;  
+      height: 30px;  
+      border: none;  
+      border-radius: 8px;  
+      color: black; 
+      background-color: var(--primary-color);
+      /* margin-left: 1rem;   */
+      }
+    /*End of Edit User */
+
+span{  
+color: white;  
+font-size: 17px;  
+margin-bottom: 1rem;
+}  
+
+#register{
+  list-style-type: none;
+  color: whitesmoke;
+  margin-top: 2rem;
+}
+
+/* End of Login style*/
+
+
+/* Start of user create */
+
+#error{
+  margin-top:15rem;
+}
+
+.create {
+width: 450px;
+background-color: #ffffff;
+box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+margin: 100px auto;
+}
+.create h1 {
+text-align: center;
+color: #5b6574;
+font-size: 24px;
+padding: 20px 0 20px 0;
+border-bottom: 1px solid #dee0e4;
+}
+.create form {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding-top: 20px;
+}
+.create form label {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+height: 50px;
+background-color: #3274d6;
+color: #ffffff;
+}
+.create form input[type="password"], .create form input[type="text"] {
+width: 310px;
+height: 50px;
+border: 1px solid #dee0e4;
+margin-bottom: 20px;
+padding: 0 15px;
+}
+
+.create form input[type="radio"]
+{
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.r{
+  width: 100%;
+margin-top: 5px;
+margin-right: 8rem;
+margin-left: 2.5rem;
+}
+
+.r1{
+  width: 80%;
+/* margin-top: 5px; */
+margin-right: 8rem;
+margin-bottom: 2rem;
+margin-left: 2.5rem;
+}
+.create form select{
+  width: 80%;
+}
+
+#sub{
+  width: 150px;  
+  height: 40px; 
+  margin-right: 15%;
+  background-color: var(--primary-color); 
+  border: none;  
+  border-radius: 3px;
+}
+
+#baack{
+  width: 50px; 
+  border: none;  
+  border-radius: 3px; 
+  height: 40px; 
+  margin-left: 85%;
+  color: whitesmoke;
+  background-color: black;
+  margin-bottom: 2rem;
+}
+
+
+/* End of user create */

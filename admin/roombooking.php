@@ -1,38 +1,31 @@
 <?php 
-// include('menu1.php');
-include('connection1.php');
+include('../includes/header.php');
 extract($_REQUEST);
 error_reporting(1);
-$id = $_GET['id'];
-$aid = $_GET['aid'];
-if($aid=="" and $id=="")
+
+if($_SESSION['ID']=="")
 {
-  header('location:userlogin.php');
+  header('location:../userlogin.php');
 }
-else if($id="")
+else if($_SESSION['AID']="")
 {
-  header('location:adminlogin1.php');
+  header('location:../userlogin.php');
 }
-else
-{
-  if($id!="")
-  {
+ else if(!$_SESSION['ID']=="")
+ {
+  $id = $_SESSION['ID'];
+ }
+ else
+ {
+  $id = $_SESSION['ID'];
+ }
+
     $sql1= mysqli_query($con,"select * from create_account where id='$id' "); 
     while($row = mysqli_fetch_array($sql1)){
       $name = $row['name'];
       $mail = $row['email'];
       $phone = $row['mobile'];
       $address = $row['address'];
-  }
-}
-  
-    $sql1= mysqli_query($con,"select * from admin where id='$aid' "); 
-    while($row = mysqli_fetch_array($sql1)){
-      $name = $row['username'];
-      $mail = $row['email'];
-      $phone = $row['mobile'];
-      $address = $row['address'];
-    }
       
 
 if(isset($savedata))
@@ -122,9 +115,9 @@ if(isset($savedata))
     </style>
 
 <div class="create">
-			<h1>Room Booking<?php echo $aid; ?></h1>
+			<h1>Room Booking</h1>
       <div class="error"><?php echo @$msg;?></div>
-			<form action="#" method="post">
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
         <div>
             Room Type:
@@ -164,7 +157,6 @@ if(isset($savedata))
 
 <?php 
 }
-
 include ('footer.php'); ?>
 
 

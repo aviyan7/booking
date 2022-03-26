@@ -1,12 +1,13 @@
 <?php 
 session_start();
 error_reporting(1);
-include('connection1.php');
+include('includes/header.php');
 extract($_REQUEST);
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $eid = $_POST['id'];
-    $pass = $_POST['pass'];
+    $eid = $con->real_escape_string($_POST['id']);
+    $pass = $con->real_escape_string(md5($_POST['pass']));
+    
 
     $sql = "SELECT * FROM create_account WHERE email = '$eid' and password = '$pass'";
     $result = mysqli_query($con,$sql);
@@ -15,18 +16,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $f = $_GET['room_no'];
     echo $f;
     if($count == 1) {
-        $id = $row['id'];
-        echo $f;
-        // $error= "<h3 style='color:red'>alid login details</h3>".$f;	
-        if($f!=NULL)
+        $_SESSION['ID'] = $row['id'];
+        $_SESSION['ROLE'] = $row['role'];
+        if($_SESSION['ROLE']=="user")
         {
-            header('location:roombooking.php?id='.$id);  
+            header('location:userprofile.php?id='.$_SESSION['ID']);
         }
-        else
-        {
-            header('location:userprofile.php?id='.$id);  
-        }
-            
+        else {
+            $_SESSION['AID'] = $row['email'];
+            header('location:admin/dashboard.php');
+         }
+           
+        echo $row['ROLE'];
     }
 
         
@@ -38,19 +39,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if(isset($back))
 {
-    header('location:index1.php');
+    header('location:index.php');
 }
-
-// include('menu1.php'); 
 
 ?>
 
- 
-<link rel="stylesheet" href="adminstyle1.css">
- <h2>User Login</h2>    
+
+ <h2>Log in to your account<?php echo $pass;?></h2>    
     <div class="adlogin">  
 	<?php echo $error;?>
-    <form id="login" method="POST" action="#">  
+    <form id="adlogin" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
         <div class="form-group">  
         <label><b>Email</b></label>    
         <input type="text" name="id" id="id" class="form-control" placeholder="Enter your email" required>    
@@ -65,11 +63,11 @@ if(isset($back))
      </div> 
      <br>
         <input type="checkbox" id="check">    
-        <span>Remember me<?php echo $f; ?></span> <br>
-        <a href="createuser.php">Create an User</a> 
+        <span>Remember me</span> <br>
+        <a href="createuser.php" id="register">Register New Account</a> 
     </form>  
 </div> 
 
 <?php
- include('footer.php'); 
+ include('includes/footer.php'); 
     ?>

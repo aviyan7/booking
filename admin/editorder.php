@@ -1,18 +1,15 @@
 <?php
 session_start();
 error_reporting(1);
-include('connection1.php');
-//  include('menu1.php');
+include('header.php');
 extract($_REQUEST);
 $id = $_GET['id'];
-echo $id;
 $sql1 = "select * from room_booking_details where id='$id' ";
 $query1 = mysqli_query($con, $sql1);
 $row = mysqli_fetch_assoc($query1);   //fetch single row
 
 if(isset($save))
 {  
-//    $row1 = mysqli_fetch_assoc($query2);
    $sql2= mysqli_query($con,"select * from room_booking_details where id='$id' ");
    $query2 = mysqli_fetch_assoc($sql2);
   if(mysqli_num_rows($sql2))
@@ -27,7 +24,7 @@ if(isset($save))
    }
 }
 ?>
-<style>
+<!-- <style>
 #error{
         margin-top:15rem;
     }
@@ -82,7 +79,7 @@ if(isset($save))
 	background-color: #2868c7;
   	transition: background-color 0.2s;
 }
-    </style>
+    </style> -->
 <div class="create">
 			<h1>Edit Room Booking Details</h1>
       <div class="error"><?php echo @$msg;?></div>
@@ -130,5 +127,5 @@ if(isset($save))
 
 				<input type="submit" value="Submit" name="save">
 			</form>
-           <a href="dashboard1.php?option=booking_details"> <input type="button" value="Back"/></a>
+           <a href="dashboard.php?option=booking_details"> <input type="button" value="Back"/></a>
 </div>

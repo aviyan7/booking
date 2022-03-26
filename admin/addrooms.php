@@ -1,56 +1,29 @@
 <?php 
+$msg = "";
 if(isset($add))
 {
 	$sql=mysqli_query($con,"select * from rooms where room_no='$rno'");
 	if(mysqli_num_rows($sql))
 	{
-	echo "this room is already added";	
+	$msg = "this room is already added";	
 	}		
 	else
 	{	
 	$img=$_FILES['img']['name'];
-	mysqli_query($con,"insert into rooms values('$rno','$type','$price','$details','$img')");	
+	mysqli_query($con,"insert into rooms values('','$rno','$type','$price','$details','$img')");	
 	move_uploaded_file($_FILES['img']['tmp_name'],"../images/".$_FILES['img']['name']);
-	echo "Rooms added successfully";
+	$msg = "Room added successfully";
 	}
 
 }
 ?>
-<style>
-	table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 80%;
-  margin-left:15%;
-  border: 2px solid black;
-}
-
-th, td {
-border-collapse: collapse;
-  text-align: left;
-  padding: 8px;
-  height: 4rem;
-  border: 2px solid black;
-}
-
-input[type="text"]{
-   height: 2rem;
-  width: 45%;
-}
-
-textarea{
-	width:85%;
-	height: 6rem;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
 
 <form method="post" enctype="multipart/form-data">
 	<h1 style='margin-left:10em'>Add New Rooms</h1><hr>
+	
 <table class="table" border="1">
 	<tr>
-      
+	<?php echo $msg; ?>
      </tr>
 	<tr>	
 		<th>Room No</th>

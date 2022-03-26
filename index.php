@@ -1,10 +1,8 @@
 <?php 
 session_start();
 error_reporting(1);
-include('connection1.php');
-include('menu1.php');
+include('./includes/header.php');
 ?>
-  <link rel="stylesheet" href="indexstyle1.css">
 
 <div class="container" id="red" style="margin-top:60px;">    
   <h1>Welcome To <font color="#a6e22b;"><b>Booking.Com</b></font></h1><hr><br>
@@ -17,9 +15,9 @@ include('menu1.php');
 	?>
   <div class="img">
 	<div class="gallery">
-      <img src="images/<?php echo $r_res['image']; ?>"alt="Image"id="img1" width="400" height="300"> <!--Id Is Img-->
-      <h4 class="Room_Text">[ <?php echo $r_res['type']; ?>]</h4>
-      <p class="desc"><?php echo substr($r_res['details'],0,100); ?></p><br>
+      <img src="images/<?php echo $r_res['image']; ?>"alt="Image"id="img1" width="400" height="300">
+      <div class="desc"><b>[ <?php echo $r_res['type']; ?>]</b></div>
+      <div class="desc"><?php echo substr($r_res['details'],0,100); ?></div><br>
 	    <a href="roomdetails.php?room_no=<?php echo $r_res['room_no'];?>"><button class="rooms">Read more</button></a><br><br>
     </div>
   </div>
@@ -30,5 +28,5 @@ include('menu1.php');
 <div class="clearfix"></div>
 
 <?php
-  include('footer.php')
+  include('./includes/footer.php')
 ?>
