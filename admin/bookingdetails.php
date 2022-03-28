@@ -1,36 +1,8 @@
 <?php 
-//  session_start();
 error_reporting(1);
 include('./admin/header.php');
 ?>
-<!-- <style>
-	*{
-		margin: 0;
-		padding: 0;
-	}
-	.top{
-		margin-left:35%;
-		margin-bottom:0.5%;
-	}
 
-	table {
-  margin-left:15%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 80%;
-  margin-left:15%;
-  border: 2px solid black;
-}
-
-th, td {
-border-collapse: collapse;
-  text-align: left;
-  padding: 8px;
-  border: 2px solid black;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-	</style> -->
 <table class="table">
 	<h1 class="top">Room Booking Details</h1><hr>
 	<thead>

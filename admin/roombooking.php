@@ -98,10 +98,10 @@ if(isset($savedata))
 
 
 .create form input[type="submit"] {
-  	width: 100%;
+  	width: 40%;
   	padding: 15px;
  	margin-top: 20px;
-  	background-color: #3274d6;
+  	background-color: #3cb371;;
   	border: 0;
   	cursor: pointer;
   	font-weight: bold;
@@ -109,8 +109,13 @@ if(isset($savedata))
   	transition: background-color 0.2s;
 }
 .create form input[type="submit"]:hover {
-	background-color: #2868c7;
+	background-color: #3cb371;
   	transition: background-color 0.2s;
+}
+
+.Back{
+  background-color: #3cb371;
+  color: whitesmoke;
 }
     </style>
 
@@ -152,12 +157,12 @@ if(isset($savedata))
 
 				<input type="submit" value="Submit" name="savedata">
 			</form>
-      <input type="button" value="Back" onclick="history.back()"/>
+      <input type="button" value="Back" class="Back" onclick="history.back()"/>
 		</div>
 
 <?php 
 }
-include ('footer.php'); ?>
+ ?>
 
 
 

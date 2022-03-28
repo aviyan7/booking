@@ -24,62 +24,7 @@ if(isset($save))
    }
 }
 ?>
-<!-- <style>
-#error{
-        margin-top:15rem;
-    }
 
-    .create {
-  	width: 550px;
-  	background-color: #ffffff;
-  	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-  	margin: 50px auto;
-}
-.create h1 {
-  	text-align: center;
-  	color: #5b6574;
-  	font-size: 24px;
-  	padding: 20px 0 20px 0;
-  	border-bottom: 1px solid #dee0e4;
-}
-.create form {
-  	display: flex;
-  	flex-wrap: wrap;
-  	justify-content: center;
-  	padding-top: 20px;
-}
-.create form label {
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	width: 50px;
-  	height: 50px;
-  	background-color: #3274d6;
-  	color: #ffffff;
-}
-.create form input[type="time"], .create form input[type="date"], .create form input[type="select"], .create form input[type="text"] {
-  	width: 310px;
-  	height: 50px;
-  	border: 1px solid #dee0e4;
-  	margin-bottom: 20px;
-  	padding: 0 15px;
-}
-.create form input[type="submit"] {
-  	width: 100%;
-  	padding: 15px;
- 	margin-top: 20px;
-  	background-color: #3274d6;
-  	border: 0;
-  	cursor: pointer;
-  	font-weight: bold;
-  	color: #ffffff;
-  	transition: background-color 0.2s;
-}
-.create form input[type="submit"]:hover {
-	background-color: #2868c7;
-  	transition: background-color 0.2s;
-}
-    </style> -->
 <div class="create">
 			<h1>Edit Room Booking Details</h1>
       <div class="error"><?php echo @$msg;?></div>

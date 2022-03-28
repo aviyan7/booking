@@ -1,5 +1,4 @@
 
-<!-- <link rel="stylesheet" href="footerstyle.css"> -->
 <!--  FOOTER START -->
    
 <div class="footer">

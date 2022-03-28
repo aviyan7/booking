@@ -3,7 +3,7 @@ session_start();
 error_reporting(1);
 include('includes/header.php');
 extract($_REQUEST);
-
+$f = $_GET['room_no'];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $eid = $con->real_escape_string($_POST['id']);
     $pass = $con->real_escape_string(md5($_POST['pass']));
@@ -13,13 +13,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
-    $f = $_GET['room_no'];
-    echo $f;
     if($count == 1) {
         $_SESSION['ID'] = $row['id'];
         $_SESSION['ROLE'] = $row['role'];
         if($_SESSION['ROLE']=="user")
         {
+
             header('location:userprofile.php?id='.$_SESSION['ID']);
         }
         else {
@@ -27,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             header('location:admin/dashboard.php');
          }
            
-        echo $row['ROLE'];
+        
     }
 
         
@@ -45,7 +44,7 @@ if(isset($back))
 ?>
 
 
- <h2>Log in to your account<?php echo $pass;?></h2>    
+ <h2>Log in to your account</h2>    
     <div class="adlogin">  
 	<?php echo $error;?>
     <form id="adlogin" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  

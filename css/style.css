@@ -1,14 +1,3 @@
-/* Add a black background color to the top navigation */
-
-/* Style the links inside the navigation bar */
-
-/* Change the color of links on hover */
-
-/* Add an active class to highlight the current page */
-
-/* Hide the link that should open and close the topnav on small screens */
-
-/*To style container in index*/
 
 :root {
   --primary-color: #3cb371;
@@ -28,122 +17,6 @@ body {
   background-color: #f8f8f8;
 }
 
-/* #navbar{
-  left:0;
-  top: 0;
-  position: fixed;
-  background-color: var(--primary-color);
-  width: 100%;
-}
-
-#navbar ul {
-  list-style: none;
-}
-
-#navbar ul li {
-  color: #333;
-  display: inline-block;
-  padding: 1rem;
-  position: relative;
-}
-
-#navbar ul li a {
-  color: #333;
-  text-decoration: none;
-} */
-
-/* Hide Nested ul By Default */
-
-/* #navbar ul li ul {
-  display: none;
-}
-
-#navbar ul li:hover {
-  cursor: pointer;
-  background: var(--primary-color);
-  color: #fff;
-}
-
-#navbar ul li:hover a {
-  color: #fff;
-}
-
-/* Nested Dropdown Show */
-
-/* #navbar ul li:hover ul {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 200px;
-  margin-top: 1rem;
-}
-
-#navbar ul li:hover ul li {
-  display: block;
-  background: #e7e7e7;
-}
-
-#navbar ul li:hover ul li a {
-  color: #333;
-}
-
-#navbar ul li:hover ul li:hover {
-  background: #e0e0e0;
-  color: inherit;
-}
-
-#navbar ul li:hover ul li span {
-  float: right;
-  color: #fff;
-  background: var(--primary-color);
-  padding: 0.2rem 0.5rem;
-  text-align: center;
-  font-size: 0.8rem;
-  border-radius: 5px;
-}
-
-#navbar ul li:hover ul li:hover span {
-  background: var(--secondary-color);
-}
-
-#navbar ul li:first-child {
-  background-color: var(--primary-color);
-}
-
-#navbar ul li:first-child a {
-  color: #fff;
-} */
-
-  /*To style container in index*/
-  /* .container{
-    margin-top: 5em;
-    text-align: center;
-  }  */
-
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-/* @media screen and (max-width: 600px) {
-    .navbar a:not(:first-child) {display: none;}
-    .navbar a.icon {
-      float: right;
-      display: block;
-    }
-  } */
-
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  /* @media screen and (max-width: 600px) {
-    .navbar.responsive {position: relative;}
-    .navbar.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .navbar.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  } */
 
 
   #navbar{
@@ -402,11 +275,15 @@ margin-left: 7rem;
 
   /*Edit User */
   #log1{
-    width: 80px;  
+    width: 150px;  
     height: 30px;  
     border: none;  
     border-radius: 8px;  
     color: black; 
+    margin-top: 0.5rem;
+    margin-bottom: none;
+    margin-right: 13%;
+    color: whitesmoke;
     background-color: var(--primary-color);
     /* margin-left: 1rem;   */
     }
@@ -416,9 +293,11 @@ margin-left: 7rem;
       height: 30px;  
       border: none;  
       border-radius: 8px;  
-      color: black; 
+      color: whitesmoke;
       background-color: var(--primary-color);
-      /* margin-left: 1rem;   */
+      margin-left: 75%;  
+      margin-top: none;
+      margin-bottom: 0.5rem;
       }
     /*End of Edit User */
 
@@ -523,5 +402,20 @@ margin-left: 2.5rem;
   margin-bottom: 2rem;
 }
 
-
 /* End of user create */
+
+
+/* Start of user profile */
+.prname{
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#pr{
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* End of user profile */

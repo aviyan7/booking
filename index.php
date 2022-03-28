@@ -4,8 +4,8 @@ error_reporting(1);
 include('./includes/header.php');
 ?>
 
-<div class="container" id="red" style="margin-top:60px;">    
-  <h1>Welcome To <font color="#a6e22b;"><b>Booking.Com</b></font></h1><hr><br>
+<div class="container" style="margin-top:60px;">    
+  <h1>Welcome To <font><b>Booking.Com</b></font></h1><hr><br>
 </div>
 
 <?php 

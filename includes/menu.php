@@ -1,6 +1,11 @@
 <?php 
 session_start();
 error_reporting(1);
+// if($_SESSION['AID']!="")
+// {
+//   header('location:admin/dashboard.php');
+// }
+
 ?>
 
 <nav id="navbar">
