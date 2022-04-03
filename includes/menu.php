@@ -1,11 +1,6 @@
 <?php 
 session_start();
 error_reporting(1);
-// if($_SESSION['AID']!="")
-// {
-//   header('location:admin/dashboard.php');
-// }
-
 ?>
 
 <nav id="navbar">
@@ -13,7 +8,10 @@ error_reporting(1);
   <li><a href="index.php">Home</a></li>
   <li><a href="about.php">About</a></li>
   <li><a href="gallery.php">Gallery</a></li>
-
+  <li class="login"><form action="./includes/search.php" method="GET">
+	<input type="text" name="query" />
+	<input type="submit" value="Search" />
+</form></li>
     <?php
      if($_SESSION['ID']!="")
      {
@@ -31,7 +29,11 @@ error_reporting(1);
      else
      {
     ?>
+    
 		<li class="login"><a href="userlogin.php">User Login</a></li>
+    <!-- <li class="login"><input type="text" placeholder="Search ....."></li>
+   -->
+
 		<?php 
 		} ?> 
   </ul>

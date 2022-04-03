@@ -15,14 +15,14 @@
 	<td colspan="8"><a href="dashboard.php?option=add_rooms"><button>Add New Rooms</button></a></td>
 	</tr>
 	<tr style="height:40">
-		<th>Sr No</th>
+		<th>SN</th>
 		<th>Image</th>
 		<th>Room No</th>
-		<th>TYpe</th>
+		<th>Type</th>
 		<th>Price</th>
 		<th>Details</th>
-		<th>Update</th>
-		<th>Delete</th>
+		<th>Status</th>
+		<th>Action</th>
 	</tr>
 <?php 
 $i=1;
@@ -40,11 +40,11 @@ $path="../images/$img";
 		<td><?php echo $res['type']; ?></td>
 		<td><?php echo $res['price']; ?></td>
 		<td><?php echo $res['details']; ?></td>
-
-		<td><a href="dashboard.php?option=update_room&id=<?php echo $id; ?>"><i class="fa fa-edit" style="color:blue"></i></a></td>
+		<td><?php echo $res['status']; ?></td>
+		<td><a href="updateroom.php?id=<?php echo $id; ?>"><i class="fa fa-edit" style="color:blue"></i></a><a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onclick="delRoom('<?php echo $id; ?>')"><i class="fa fa-trash" style="color:red;"></i></a></td>
 
 		
-		<td><a href="#" onclick="delRoom('<?php echo $id; ?>')"><i class="fa fa-trash" style="color:red;"></i></a></td>
+		<!-- <td><a href="#" onclick="delRoom('')"><i class="fa fa-trash" style="color:red;"></i></a></td> -->
 	</tr>	
 <?php 	
 }

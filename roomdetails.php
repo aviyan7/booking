@@ -19,6 +19,7 @@ $res=mysqli_fetch_assoc($sql);
 
     
     <div class="desc1"><b>Price: <?php echo $res['price']; ?></b></div>
+    <div class="desc1"><b>Status: <?php echo $res['status']; ?></b></div>
 		<div class="desc1"><b>
       <?php echo $res['details']; ?>
 </b>

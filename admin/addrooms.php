@@ -10,7 +10,7 @@ if(isset($add))
 	else
 	{	
 	$img=$_FILES['img']['name'];
-	mysqli_query($con,"insert into rooms values('','$rno','$type','$price','$details','$img')");	
+	mysqli_query($con,"insert into rooms values('','$rno','$type','$price','$details','$img','open')");	
 	move_uploaded_file($_FILES['img']['tmp_name'],"../images/".$_FILES['img']['name']);
 	$msg = "Room added successfully";
 	}

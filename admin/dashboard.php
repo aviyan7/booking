@@ -44,10 +44,10 @@ else
     include('addrooms.php');
   }
   
-  else if($opt=="update_room")
-  {
-    include('updateroom.php');
-  }
+  // else if($opt=="update_room")
+  // {
+  //   include('updateroom.php');
+  // }
   else if($opt=="booking_details")
   {
     include('bookingdetails.php');

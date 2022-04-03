@@ -26,7 +26,7 @@ else if($_SESSION['AID']="")
       $mail = $row['email'];
       $phone = $row['mobile'];
       $address = $row['address'];
-      
+    
 
 if(isset($savedata))
 {
@@ -35,15 +35,28 @@ if(isset($savedata))
   {
   $msg= "<h1 style='color:red'>You have already booked this room</h1>";    
   }
-  else
-  {
-   $sql3="insert into room_booking_details(name,email,phone,address,room_type,Occupancy,check_in_date,check_in_time,check_out_date) 
-  values('$name','$mail','$phone','$address','$room_type','$Occupancy','$cdate','$ctime','$codate')";
-   if(mysqli_query($con,$sql3))
+  else {
+    $sql3= mysqli_query($con,"select * from room_booking_details");
+    $row1 = mysqli_fetch_array($sql3);
+    if($row1['status']=='booked'){
+    $msg= "<h1 style='color:red'>This room is already booked</h1>"; 
+    }
+  $sql4="insert into room_booking_details(name,email,phone,address,room_type,occupancy,check_in_date,check_in_time,check_out_date,status) values('$name','$mail','$phone','$address','$room_type','$Occupancy','$cdate','$ctime','$codate','booked')";
+   if(mysqli_query($con,$sql4))
    {
    $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1>"; 
    }
   }
+
+  // else
+  // {
+  //  $sql4="insert into room_booking_details(name,email,phone,address,room_type,Occupancy,check_in_date,check_in_time,check_out_date,status) 
+  // values('$name','$mail','$phone','$address','$room_type','$Occupancy','$cdate','$ctime','$codate','booked')";
+  //  if(mysqli_query($con,$sql4))
+  //  {
+  //  $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1>"; 
+  //  }
+  // }
 }
 
 ?>

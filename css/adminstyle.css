@@ -128,6 +128,12 @@ input[type=password], select{
   box-sizing: border-box;
 }
 
+.urdetails{
+  width: 100%;
+  padding: 30px 40px;
+}
+
+
 input[type=submit] {
    background-color: black; 
   color: whitesmoke;

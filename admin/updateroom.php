@@ -13,29 +13,32 @@ header('location:dashboard.php?option=rooms');
 
 ?>
 
-<link rel="stylesheet" href="updateroomstyle.css">
+<!-- <link rel="stylesheet" href="updateroomstyle.css">updateForm -->
 
-<div class="container">
-	<form method="post" enctype="multipart/form-data" class="updateForm">
-<div class="row">
-        <label>Room Number</label>
+<div class="create">
+<h1>Edit Room </h1>
+      <div class="error"><?php echo @$msg;?></div>
+	<form method="post" enctype="multipart/form-data" action="#">
+<div >
+        Room Number:
 		<input type="text" name="rno"  value="<?php echo $res['room_no']; ?>"/>
 </div>
-<div class="row">
-        <label>Room Type</label>
+<div>
+        Room Type:
 		<input type="text" name="type"  value="<?php echo $res['type']; ?>"/>
 </div>
-<div class="row">
-        <label>Price</label>
+<div>
+        Price:
 		<input type="text" name="price"  value="<?php echo $res['price']; ?>"/>
 </div>
-<div class="row">
-        <label>Details</label>
-		<input type="textarea" name="details"  value="<?php echo $res['details']; ?>"/>
+<div>
+        Details:
+		<input type="textarea" name="details" class="urdetails" value="<?php echo $res['details']; ?>"/>
 </div>
-<div class="row">
+<br>
+
 <input type="submit" value="Update" name="update" required/>
-</div>
+
 </form>
 </div>
 
