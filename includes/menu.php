@@ -8,6 +8,7 @@ error_reporting(1);
   <li><a href="index.php">Home</a></li>
   <li><a href="about.php">About</a></li>
   <li><a href="gallery.php">Gallery</a></li>
+  <li><a href="contact.php">Contact us</a></li>
   <li class="login"><form action="./includes/search.php" method="GET">
 	<input type="text" name="query" />
 	<input type="submit" value="Search" />

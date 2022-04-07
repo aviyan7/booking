@@ -2,6 +2,7 @@
 session_start();
 error_reporting(1);
 include('./includes/header.php');
+$id = $_SESSION['ID'];
 ?>
 
 <body style="margin-top:50px;">
@@ -26,7 +27,7 @@ $res=mysqli_fetch_assoc($sql);
     </div>
 
     <div class="desc1">
-      <a href="checklogin.php?room_no=<?php echo $room_no;?>"><button>Book Now</button></a>
+      <a href="checklogin.php?room_no=<?php echo $room_no;?>&&id=<?php echo $id; ?>"><button>Book Now</button></a>
       <a href="index.php"><button>Back</button></a>
     </div>
       
@@ -43,6 +44,7 @@ $res=mysqli_fetch_assoc($sql);
             <?php } ?>
   
 				</div>
+        
 
 
   <?php

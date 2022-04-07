@@ -1,7 +1,8 @@
 <?php 
 session_start();
 error_reporting(1);
-include('includes/header.php');
+// include('includes/header.php');
+include('includes/connection.php');
 extract($_REQUEST);
 $f = $_GET['room_no'];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,12 +15,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
     if($count == 1) {
-        $_SESSION['ID'] = $row['id'];
+        // $_SESSION['ID'] = $row['id'];
         $_SESSION['ROLE'] = $row['role'];
         if($_SESSION['ROLE']=="user")
         {
+            $_SESSION['ID'] = $row['id'];
+            if($f){
+                header('location:admin/roombooking.php');
+            }
+            else{
+                header('location:userprofile.php?id='.$_SESSION['ID']);
+            }
 
-            header('location:userprofile.php?id='.$_SESSION['ID']);
         }
         else {
             $_SESSION['AID'] = $row['email'];
@@ -42,12 +49,12 @@ if(isset($back))
 }
 
 ?>
+<!-- echo htmlspecialchars($_SERVER["PHP_SELF"]);-->
 
-
- <h2>Log in to your account</h2>    
+ <h2>Log in to your account<?php echo $f;  ?></h2>    
     <div class="adlogin">  
 	<?php echo $error;?>
-    <form id="adlogin" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <form id="adlogin" method="POST" action="#">  
         <div class="form-group">  
         <label><b>Email</b></label>    
         <input type="text" name="id" id="id" class="form-control" placeholder="Enter your email" required>    

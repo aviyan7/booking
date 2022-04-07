@@ -51,7 +51,7 @@ if(isset($_POST['save']))
 
          <div>
             Email:
-              <input type="text" name="mail" placeholder="Enter Your Email" required>
+              <input type="email" name="mail" placeholder="Enter Your Email" required>
           </div>
 
           <div>
@@ -61,7 +61,7 @@ if(isset($_POST['save']))
        
           <div>
           Mobile:
-              <input type="text" name="mobi" placeholder="Enter Your Mobile Number" required>
+              <input type="number" name="mobi" placeholder="Enter Your Mobile Number" required>
           </div>
  
           <div>

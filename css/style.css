@@ -159,8 +159,10 @@ body {
 
     .img1 {
       padding: 5px 30px;
-      width: 45%;
-      margin-left: 10%;
+      width: 85%;
+      height: 35%;
+      /* margin-left: 10%; */
+      align-items: center;
       margin-bottom: 1.5rem;
     }
   
@@ -350,7 +352,7 @@ height: 50px;
 background-color: #3274d6;
 color: #ffffff;
 }
-.create form input[type="password"], .create form input[type="text"] {
+.create form input[type="password"], .create form input[type="text"], .create form input[type="email"], .create form input[type="number"] {
 width: 310px;
 height: 50px;
 border: 1px solid #dee0e4;
@@ -419,3 +421,11 @@ margin-left: 2.5rem;
 
 
 /* End of user profile */
+
+/* Start of About */
+.about {
+  text-align: justify;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+/*End of About*/

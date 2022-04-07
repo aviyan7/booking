@@ -51,15 +51,12 @@ $oid=$res['id'];
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
-		<td><?php echo $res['name']; ?></td>
-		<td><?php echo $res['email']; ?></td>
-		<td><?php echo $res['phone']; ?></td>
-		<td><?php echo $res['address']; ?></td>
 		<td><?php echo $res['room_type']; ?></td>
 		<td><?php echo $res['check_in_date']; ?></td>
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['occupancy']; ?></td>
+		<td><?php echo $res['status'] ?></td>
 		<td><a style="color:red" href="cancelorder.php?id=<?php echo $oid; ?>"><i class="fa fa-trash"></i></a></td>
 	</td>
 	</tr>
