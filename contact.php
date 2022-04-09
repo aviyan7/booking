@@ -11,10 +11,10 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO contact values('','$name','$email','$phone','$message')";
     $result = mysqli_query($con, $sql);
         if($result){
-            $msg = "Your message was sent successfully";
+            $msg = "<h1 style='color:green'>Your message was sent successfully</h1>"; 
         }
         else{
-            $msg = "Sorry your message could not be sent";
+            $msg = "<h1 style='color:green'>Sorry your message could not be sent</h1>"; 
         }
 }
 ?>
@@ -38,7 +38,8 @@ if(isset($_POST['submit'])){
                 </div>
                 <div>
                     Message:
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Type Your Message..." required></textarea>
+                    <textarea name="message" id="message"  placeholder="Type Your Message..." required></textarea>
+                    <!-- cols="30" rows="10"-->
                 </div>
                 <div>
                 <img src="captcha.php"/><input type="text" name="captcha" />

@@ -11,6 +11,7 @@ if (!isset($_SESSION['ID'])) {
  if($_POST['back'])
  {
      header('location:index.php?id='.$_SESSION['ID']);
+     exit();
  }
 
  $id = $_SESSION['ID'];
@@ -19,19 +20,25 @@ if (!isset($_SESSION['ID'])) {
  $row = mysqli_fetch_assoc($result);
 ?>
 
-<div>
+<div class="create">
 <h1 class="prname">Welcome <?php echo $row['name']; ?></h1>
 <h3 id="pr">Email: <?php echo $row['name']; ?></h3>
 <h3 id="pr">Mobile: <?php echo $row['mobile']; ?></h3>
 <h3 id="pr">Address: <?php echo $row['address']; ?></h3>
 <h3 id="pr">Gender: <?php echo $row['gender']; ?></h3>
 <h3 id="pr">Role: <?php echo $row['role']; ?></h3>
-</div>
+<!-- </div> -->
 
-<a href="edituser.php"><button style=" margin-left:47%; background-color:#3cb371; color:whitesmoke;">Edit Profile</button></a>
+<!-- <a href="edituser.php"><button style=" margin-left:47%; background-color:#3cb371; color:whitesmoke;">Edit Profile</button></a>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-<input type="submit" value="Back" name="back" style=" margin-left:54%; background-color:#3cb371; color:whitesmoke;">
-</form>
+<input type="submit" value="Back" name="back" style=" margin-left:54%; background-color:#3cb371; color:whitesmoke;"> -->
+
+<a href="edituser.php"><button id="log2">Edit Profile</button></a>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<input type="submit" value="Back" name="back" id="back1" >
+<!-- </form> -->
+
+</div>
 
 
 <?php

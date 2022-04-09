@@ -2,9 +2,9 @@
       include('./includes/header.php');
   ?>
 
-<body style="margin-top:50px;">
+<body>
+<h1 class="container">Booking.Com</h1><hr><br>
 <div class="about">    
-  <h1 class="desc1"><b>Booking.Com</b></h1><hr><br>
  <h3>Find the best hotels in Nepal to match your budget from the selection of Nepal's best hotels offered by Booking.com.
     Best price guaranteed.</h3><br>
  <div>

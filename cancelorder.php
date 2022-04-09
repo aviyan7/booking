@@ -8,6 +8,7 @@ $id=$_GET['id'];
     $result = mysqli_query($con, $sql);
     if($result){
         header('location:admin/dashboard.php?option=booking_details');  
+        exit();
     }
 }
 else{
@@ -15,6 +16,7 @@ else{
     $result = mysqli_query($con, $sql);
     if($result){
         header('location:userbooking.php');
+        exit();
     }
     
 }

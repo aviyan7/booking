@@ -8,6 +8,7 @@ unlink("../image/rooms/$img");
 if(mysqli_query($con,"delete from rooms where room_no='$id' "))
 {
 header('location:dashboard.php?option=rooms');	
+exit();
 }
 
 ?>

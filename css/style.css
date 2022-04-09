@@ -290,6 +290,21 @@ margin-left: 7rem;
     /* margin-left: 1rem;   */
     }
 
+    #log2{
+      width: 150px;  
+      height: 30px;  
+      border: none;  
+      border-radius: 8px;  
+      color: black; 
+      margin-top: 0.5rem;
+      margin-bottom: none;
+      /* margin-right: 13%; */
+      margin-left: 45%;
+      color: whitesmoke;
+      background-color: var(--primary-color);
+      /* margin-left: 1rem;   */
+      }
+
     #back1{
       width: 80px;  
       height: 30px;  
@@ -429,3 +444,14 @@ margin-left: 2.5rem;
   margin-right: 3rem;
 }
 /*End of About*/
+
+/* Start of Table */
+table{
+  margin-left:8%;
+  margin-top: 1rem;
+}
+.top{
+  margin-top: 5rem;
+  margin-left:25%;
+}
+/* End of Table */

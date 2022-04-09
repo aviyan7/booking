@@ -7,25 +7,9 @@ if (!isset($_SESSION['ID'])) {
 	exit();
  }
  $id = $_SESSION['ID'];
- $sql = "SELECT * FROM create_account WHERE id = '$id' ";
-   $result = mysqli_query($con,$sql);
- $row = mysqli_fetch_assoc($result);
- $id = $row['email'];
 extract($_REQUEST);
 
 ?>
-
-
-<style>
-	table{
-		margin-left:15%;
-		margin-top: 1rem;
-	}
-	.top{
-		margin-top: 5rem;
-		margin-left:15%;
-	}
-	</style>
 <table class="table" border="1px solid;">
 	<h1 class="top">User Room Booking</h1><hr>
 	<tr>
@@ -44,20 +28,24 @@ extract($_REQUEST);
 
 <?php 
 $i=1;
-$sql=mysqli_query($con,"select * from room_booking_details where email='$id' ");
-while($res=mysqli_fetch_assoc($sql))
+$sql="SELECT create_account.name, create_account.email, create_account.mobile, create_account.address, room_booking_details.id, room_booking_details.room_type, room_booking_details.check_in_date, room_booking_details.check_in_time, room_booking_details.check_out_date, room_booking_details.occupancy, room_booking_details.status FROM create_account INNER JOIN room_booking_details ON create_account.id = room_booking_details.userid WHERE room_booking_details.userid = '$id'";
+$result = mysqli_query($con,$sql);
+while($res=mysqli_fetch_assoc($result))
 {
-$oid=$res['id'];
+$id=$res['id'];
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
+		<td><?php echo $res['name']; ?></td>
+		<td><?php echo $res['email']; ?></td>
+		<td><?php echo $res['mobile']; ?></td>
+		<td><?php echo $res['address']; ?></td>
 		<td><?php echo $res['room_type']; ?></td>
 		<td><?php echo $res['check_in_date']; ?></td>
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['occupancy']; ?></td>
-		<td><?php echo $res['status'] ?></td>
-		<td><a style="color:red" href="cancelorder.php?id=<?php echo $oid; ?>"><i class="fa fa-trash"></i></a></td>
+		<td><a style="color:red" href="cancelorder.php?id=<?php echo $id; ?>"><i class="fa fa-trash"></i></a></td>
 	</td>
 	</tr>
 <?php 	

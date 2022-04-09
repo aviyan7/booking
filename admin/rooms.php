@@ -3,7 +3,7 @@
 	{
 		if(confirm("You want to delete this Room ?"))
 		{
-		window.location.href='admin/deleteroom.php?id='+id;	
+		window.location.href='../admin/deleteroom.php?id='+id;	
 		}
 	}
 </script>
@@ -41,10 +41,7 @@ $path="../images/$img";
 		<td><?php echo $res['price']; ?></td>
 		<td><?php echo $res['details']; ?></td>
 		<td><?php echo $res['status']; ?></td>
-		<td><a href="updateroom.php?id=<?php echo $id; ?>"><i class="fa fa-edit" style="color:blue"></i></a><a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onclick="delRoom('<?php echo $id; ?>')"><i class="fa fa-trash" style="color:red;"></i></a></td>
-
-		
-		<!-- <td><a href="#" onclick="delRoom('')"><i class="fa fa-trash" style="color:red;"></i></a></td> -->
+		<td><a href="updateroom.php?id=<?php echo $id; ?>"><i class="fa fa-edit" style="color:blue"></i></a>&nbsp; &nbsp;<a href="#" onclick="delRoom('<?php echo $id; ?>')"><i class="fa fa-trash" style="color:red;"></i></a></td>
 	</tr>	
 <?php 	
 }

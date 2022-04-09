@@ -4,6 +4,7 @@ extract($_REQUEST);
 include('../admin/header.php');
  if(!$_SESSION['AID']){
   header('location:../userlogin.php');
+  exit();
  }
 ?>
     <div class="sidebar">
@@ -59,6 +60,7 @@ else
   else if($opt=="log_out")
   {
     header('location:../userlogout.php');
+    exit();
   }
 
 }

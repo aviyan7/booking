@@ -15,9 +15,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $query2 = mysqli_fetch_assoc($sql2);
   if(mysqli_num_rows($sql2))
   {
-   $sql3="update room_booking_details set name='$fname', email='$mail' ,phone='$mobi' ,address='$addr',room_type='$room_type', check_in_date='$check_in_date', check_in_time='$check_in_time', check_out_date='$check_out_date'  where id='$id' ";
+   $sql3="update room_booking_details set room_type='$room_type', check_in_date='$check_in_date', check_in_time='$check_in_time', check_out_date='$check_out_date'  where id='$id' ";
    $query3 = mysqli_query($con, $sql3);
-   header('location:editorder.php?id='.$id); 
    $msg1= "<h1 style='color:green'>Data Edited and Saved Successfully</h1>"; 
    }
    else
@@ -33,25 +32,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       <div class="error"><?php echo $msg1;?></div>
 			<form action="#" method="POST">
 
-        <div>
+        <!-- <div>
             Name:
-        <input type="text" name="fname" value="<?php echo $row['name']?>" required>
+        <input type="text" name="fname"  required>
         </div>
 
          <div>
             Email:
-              <input type="text" name="mail" value="<?php echo $row['email']?>" required>
+              <input type="text" name="mail"  required>
           </div>
        
           <div>
           Mobile:
-              <input type="text" name="mobi" value="<?php echo $row['phone']?>" required>
+              <input type="text" name="mobi"  required>
           </div>
  
           <div>
             Address:
-          <input type="text" name="addr" value="<?php echo $row['address']?>" required>
-           </div>
+          <input type="text" name="addr"  required>
+           </div> -->
 
            <div>
             Room Type:

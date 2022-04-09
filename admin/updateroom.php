@@ -9,11 +9,10 @@ if(isset($update))
 {
 mysqli_query($con,"update rooms set room_no='$rno',type='$type',price='$price',details='$details' where room_no='$id' ");
 header('location:dashboard.php?option=rooms');
+exit();
 }
 
 ?>
-
-<!-- <link rel="stylesheet" href="updateroomstyle.css">updateForm -->
 
 <div class="create">
 <h1>Edit Room </h1>

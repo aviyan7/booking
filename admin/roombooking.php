@@ -4,10 +4,12 @@ extract($_REQUEST);
 error_reporting(1);
 $uid = $_SESSION['ID'];
 $aid = $_GET['aid'];
+// $aid = $_SESSION['aid'];
 if($_SESSION['ID']=="")
 {
   if($aid==""){
     header('location:../userlogin.php');
+    exit();
   }
   elseif($aid!==""){
     $id = $aid;
@@ -151,7 +153,7 @@ if(isset($savedata))
 <div class="create">
 			<h1>Room Booking</h1>
       <div class="error"><?php echo @$msg;?></div>
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+			<form action="#" method="post">
 
         <div>
             Room Type:
@@ -171,7 +173,7 @@ if(isset($savedata))
           </div>
 
           <div>
-          Check In Time: <input type="time" name="ctime" required>:
+          Check In Time: <input type="time" name="ctime" required>
           </div>
        
           <div>

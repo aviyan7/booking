@@ -29,6 +29,7 @@ if(isset($_POST['save']))
    if($role=="user") 
    {
     header('location:userprofile.php'); 
+    exit();
    }
 
    }
