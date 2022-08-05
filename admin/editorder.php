@@ -32,26 +32,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       <div class="error"><?php echo $msg1;?></div>
 			<form action="#" method="POST">
 
-        <!-- <div>
-            Name:
-        <input type="text" name="fname"  required>
-        </div>
-
-         <div>
-            Email:
-              <input type="text" name="mail"  required>
-          </div>
-       
-          <div>
-          Mobile:
-              <input type="text" name="mobi"  required>
-          </div>
- 
-          <div>
-            Address:
-          <input type="text" name="addr"  required>
-           </div> -->
-
            <div>
             Room Type:
           <input type="select" name="room_type" value="<?php echo $row['room_type']?>" required>
@@ -71,13 +51,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             Check Out Date:
           <input type="date" name="check_out_date" value="<?php echo $row['check_out_date']?>" required>
            </div>
-           <!-- <div>
-            Occupancy:
-            <input type="radio" name="occupancy" value="" required><b>Single</b>
-              <input type="radio" name="occupancy"  required><b>Twin</b>&emsp;
-           </div> -->
 
-				<input type="submit" value="Update" name="save">
+				<input type="submit" value="Update" name="update">
 			</form>
            <a href="dashboard.php?option=booking_details"> <input type="button" value="Back"/></a>
 </div>

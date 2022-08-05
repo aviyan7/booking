@@ -20,7 +20,7 @@ exit();
 	<form method="post" enctype="multipart/form-data" action="#">
 <div >
         Room Number:
-		<input type="text" name="rno"  value="<?php echo $res['room_no']; ?>"/>
+		<input type="number" name="rno"  value="<?php echo $res['room_no']; ?>"/>
 </div>
 <div>
         Room Type:
@@ -28,16 +28,18 @@ exit();
 </div>
 <div>
         Price:
-		<input type="text" name="price"  value="<?php echo $res['price']; ?>"/>
+		<input type="number" name="price"  value="<?php echo $res['price']; ?>"/>
 </div>
 <div>
         Details:
-		<input type="textarea" name="details" class="urdetails" value="<?php echo $res['details']; ?>"/>
+		<input type="textarea" cols="70" name="details" class="urdetails" value="<?php echo $res['details']; ?>"/>
 </div>
+<div>
 <br>
-
-<input type="submit" value="Update" name="update" required/>
-
+<br>
+<br>
+</div>
+<input type="submit"  value="Update" name="update" required/>
 </form>
 </div>
 

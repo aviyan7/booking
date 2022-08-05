@@ -129,8 +129,8 @@ input[type=password], select{
 }
 
 .urdetails{
-  width: 100%;
-  padding: 30px 40px;
+  width: 50%;
+  /* padding: 30px 40px; */
 }
 
 
@@ -226,7 +226,7 @@ tr:nth-child(even){background-color: #f2f2f2}
   background-color: #3274d6;
   color: #ffffff;
 }
-.create form input[type="time"], .create form input[type="date"], .create form input[type="select"], .create form input[type="text"] {
+.create form input[type="time"], .create form input[type="date"], .create form input[type="select"], .create form input[type="text"], .create form input[type="number"] {
   width: 310px;
   height: 50px;
   border: 1px solid #dee0e4;

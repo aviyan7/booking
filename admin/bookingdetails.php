@@ -2,12 +2,13 @@
 error_reporting(1);
 include('./admin/header.php');
 $i =1;
+$aid = $_SESSION['EID'];
 ?>
 
 <table class="table">
 	<h1 class="top">Room Booking Details</h1><hr>
 	<thead>
-		<a href="roombooking.php?aid=1"><button class="top">Book Room</button></a>
+		<a href="roombooking.php?aid=<?php echo $aid;?>"><button class="top">Book Room</button></a>
 </thead>
 	<tr>
 		<th>SN</th>
@@ -25,7 +26,6 @@ $i =1;
 	</tr>
 
 <?php 
-// $sql=mysqli_query($con,"select * from room_booking_details");
 $sql="SELECT create_account.name, create_account.email, create_account.mobile, create_account.address, room_booking_details.id, room_booking_details.room_type, room_booking_details.check_in_date, room_booking_details.check_in_time, room_booking_details.check_out_date, room_booking_details.occupancy, room_booking_details.status FROM create_account INNER JOIN room_booking_details ON create_account.id = room_booking_details.userid";
 $result = mysqli_query($con,$sql);
 if (mysqli_num_rows($result) > 0)

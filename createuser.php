@@ -12,8 +12,6 @@ if(isset($_POST['save']))
     $addr  = $con->real_escape_string($_POST['addr']);
     $gend  = $con->real_escape_string($_POST['gend']);
     $role  = $con->real_escape_string($_POST['role']);
-
-    // echo $role; echo $pass; 
     
   $sql= mysqli_query($con,"select * from create_account where email='$mail' ");
   if(mysqli_num_rows($sql))

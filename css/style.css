@@ -159,7 +159,8 @@ body {
 
     .img1 {
       padding: 5px 30px;
-      width: 85%;
+      /* width: 85%; */
+      width: 35%;
       height: 35%;
       /* margin-left: 10%; */
       align-items: center;
@@ -197,6 +198,11 @@ body {
       .img {
         width: 100%;
       }
+    }
+
+    .clearfix {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
     }
     
     .clearfix:after {

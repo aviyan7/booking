@@ -2,7 +2,6 @@
 session_start();
 error_reporting(1);
 include('includes/header.php');
-// include('includes/connection.php');
 extract($_REQUEST);
 $f = $_GET['room_no'];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,9 +14,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
     if($count == 1) {
-        // $_SESSION['ID'] = $row['id'];
+
         $_SESSION['ROLE'] = $row['role'];
-        if($_SESSION['ROLE']=="user")
+        if($_SESSION['ROLE']=="0")
         {
             $_SESSION['ID'] = $row['id'];
             if($f){
@@ -31,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
         else {
+            $_SESSION['EID'] = $row['id'];
             $_SESSION['AID'] = $row['email'];
             header('location:admin/dashboard.php');
             exit();
@@ -53,7 +53,7 @@ if(isset($back))
 }
 
 ?>
-<!-- echo htmlspecialchars($_SERVER["PHP_SELF"]);-->
+
 
  <h2>Log in to your account</h2>    
     <div class="adlogin">  

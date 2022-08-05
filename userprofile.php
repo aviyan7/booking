@@ -27,16 +27,11 @@ if (!isset($_SESSION['ID'])) {
 <h3 id="pr">Address: <?php echo $row['address']; ?></h3>
 <h3 id="pr">Gender: <?php echo $row['gender']; ?></h3>
 <h3 id="pr">Role: <?php echo $row['role']; ?></h3>
-<!-- </div> -->
-
-<!-- <a href="edituser.php"><button style=" margin-left:47%; background-color:#3cb371; color:whitesmoke;">Edit Profile</button></a>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-<input type="submit" value="Back" name="back" style=" margin-left:54%; background-color:#3cb371; color:whitesmoke;"> -->
 
 <a href="edituser.php"><button id="log2">Edit Profile</button></a>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <input type="submit" value="Back" name="back" id="back1" >
-<!-- </form> -->
+
 
 </div>
 

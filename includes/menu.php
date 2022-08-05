@@ -32,8 +32,6 @@ error_reporting(1);
     ?>
     
 		<li class="login"><a href="userlogin.php">User Login</a></li>
-    <!-- <li class="login"><input type="text" placeholder="Search ....."></li>
-   -->
 
 		<?php 
 		} ?> 

@@ -3,9 +3,8 @@ session_start();
 error_reporting(1);
 include('./includes/header.php');
 ?>
-
 <div class="container" style="margin-top:60px;">    
-  <h1>Welcome To <font><b>Booking.Com</b></font></h1><hr><br>
+  <h1>Welcome To <font><b>Hotel Booking.Com</b></font></h1><hr><br>
 </div>
 
 <?php 
@@ -26,6 +25,7 @@ include('./includes/header.php');
 <br>
 <br>
 <div class="clearfix"></div>
+
 
 <?php
   include('./includes/footer.php')

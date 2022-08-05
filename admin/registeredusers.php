@@ -9,8 +9,7 @@
 		<th>Mobile</th>
 		<th>Address</th>
 		<th>Gender</th>
-    <th>Role</th>
-    <th>Action</th>
+        <th>Action</th>
 	</tr> 
 	<?php 
     $sql=mysqli_query($con,"select * from create_account");
@@ -24,7 +23,6 @@
             <td><?php echo $res['mobile']; ?></td>
             <td><?php echo $res['address']; ?></td>
             <td><?php echo $res['gender']; ?></td>
-            <td><?php echo $res['role']; ?></td>
             <td><a href="deleteuser.php?id=<?php echo $res['id'];?>"><i class="fa fa-trash" style="color:red"></i></a></td>
         </td>
         </tr>	

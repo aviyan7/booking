@@ -4,9 +4,8 @@
 <div class="footer">
 <!--   Footer Bottom start  -->
   <div class="footer-bottom">
- 
 
-    Copyright &copy; <?php echo date("Y");?> Booking.Com 
+  Hotel Booking.com &copy; <?php echo date("Y");?>  
   </div>
 </div>
    

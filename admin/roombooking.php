@@ -4,7 +4,7 @@ extract($_REQUEST);
 error_reporting(1);
 $uid = $_SESSION['ID'];
 $aid = $_GET['aid'];
-// $aid = $_SESSION['aid'];
+
 if($_SESSION['ID']=="")
 {
   if($aid==""){
@@ -14,16 +14,9 @@ if($_SESSION['ID']=="")
   elseif($aid!==""){
     $id = $aid;
   }
-  // $id = $uid;
+
 }
-// else if($_SESSION['AID']=="")
-// {
-//   header('location:../userlogin.php');
-// }
-//  else if(!$_SESSION['ID']=="")
-//  {
-//   $id = $_SESSION['ID'];
-//  }
+
  else
  {
   $id = $uid;
@@ -41,47 +34,27 @@ if($_SESSION['ID']=="")
 if(isset($savedata))
 {
 
-  // $sql2= mysqli_query($con,"select * from create_account where email='$mail' and room_type='$room_type');
-  // if(mysqli_num_rows($sql2)) 
-  // {
-  // $msg= "<h1 style='color:red'>You have already booked this room</h1>";    
-  // }
-  // else {
-  //   $sql3= mysqli_query($con,"select * from room_booking_details");
-  //   $row1 = mysqli_fetch_array($sql3);
-  //   if($row1['status']=='booked'){
-  //   $msg= "<h1 style='color:red'>This room is already booked</h1>"; 
-  //   }
+    $room_type = $con->real_escape_string($_POST['room_type']);
+    $rno  = $con->real_escape_string(md5($_POST['rno']));
+    $cdate  = $con->real_escape_string($_POST['cdate']);
+    $ctime  = $con->real_escape_string($_POST['ctime']);
+    $codate  = $con->real_escape_string($_POST['codate']);
+    $Occupancy  = $con->real_escape_string($_POST['Occupancy']);
+    
 
-
-    $sql3= mysqli_query($con,"select * from room_booking_details");
-    $row1 = mysqli_fetch_array($sql3);
-    if($row1['status']=='booked'){
-    $msg= "<h1 style='color:red'>This room is already booked</h1>"; }
-
-  $sql4="insert into room_booking_details(userid,room_type,occupancy,check_in_date,check_in_time,check_out_date,status) values('$userid','$room_type','$Occupancy','$cdate','$ctime','$codate','booked')";
+$sql4="insert into room_booking_details (id, room_type, userid, check_in_date, check_in_time,check_out_date, occupancy, status ) values('','$room_type', '$userid', '$cdate', '$ctime','$codate', '$Occupancy', 'booked')";
    if(mysqli_query($con,$sql4))
    {
-   $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1>"; 
+   $msg= "<h1 style='color:green'>Data Saved Successfully</h1>";
    }
-  // }
-
-  // else
-  // {
-  //  $sql4="insert into room_booking_details(name,email,phone,address,room_type,Occupancy,check_in_date,check_in_time,check_out_date,status) 
-  // values('$name','$mail','$phone','$address','$room_type','$Occupancy','$cdate','$ctime','$codate','booked')";
-  //  if(mysqli_query($con,$sql4))
-  //  {
-  //  $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1>"; 
-  //  }
-  // }
 }
+    
 
 ?>
 
 <style>
-    #error{
-        margin-top:15rem;
+    .error{
+        margin-top:1rem;
     }
 
     .create {
@@ -152,32 +125,51 @@ if(isset($savedata))
 
 <div class="create">
 			<h1>Room Booking</h1>
-      <div class="error"><?php echo @$msg;?></div>
+      <div class="error"><?php echo $msg;?></div>
+      <div class="error"><?php echo @$msg1;?></div>
 			<form action="#" method="post">
 
-        <div>
-            Room Type:
-            <select name="room_type" required>
-                  <option>Normal Room</option>
-                  <option>Deluxe Room</option>
-                  <option>Luxurious Suite</option>
-                  <option>Standard Room</option>
-                  <option>Suite Room</option>
-                  <option>Twin Deluxe Room</option>
-               </select>
-        </div>
+      <div>
+        Room Type:
+        <select name="room_type">
+        <?php
+        $i = 0;
+        $sql3= mysqli_query($con,"select type from rooms");
+        while($row = mysqli_fetch_array($sql3)){
+          ?>
+          <option>
+          <?php echo $row['type']; ?>
+          <?php $i++; } ?>
+        </option>
+        </select>
+      </div>
 
+        <div>
+            Room Number:
+            <select name="rno">
+        <?php
+        $i = 0;
+        $sql3= mysqli_query($con,"select room_no from rooms");
+        while($row = mysqli_fetch_array($sql3)){
+          ?>
+          <option>
+          <?php echo $row['room_no']; ?>
+          <?php $i++; } ?>
+        </option>
+        </select>  
+        </div>
+          
          <div>
           Check In Date :
-                  <input type="date" name="cdate" required>
+                  <input type="date" name="cdate" min="<?php echo date('Y-m-d'); ?>" onchange="OnSelect(this); return false; " required>
           </div>
 
           <div>
           Check In Time: <input type="time" name="ctime" required>
-          </div>
+          </div> 
        
           <div>
-          Check Out Date: <input type="date" name="codate" required>
+          Check Out Date: <input type="date" name="codate" onclick="onDisplay()" min="<?php echo date('Y-m-d'); ?>" required>
           </div>
  
           <div>

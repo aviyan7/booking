@@ -3,12 +3,12 @@
   ?>
 
 <body>
-<h1 class="container">Booking.Com</h1><hr><br>
+<h1 class="container">Hotel Booking.Com</h1><hr><br>
 <div class="about">    
- <h3>Find the best hotels in Nepal to match your budget from the selection of Nepal's best hotels offered by Booking.com.
+ <h3>Find the best hotels in Nepal to match your budget from the selection of Nepal's best hotels offered by Hotel Booking.com.
     Best price guaranteed.</h3><br>
  <div>
-Booking.com is Nepal's leading online hotel reservation agency based in Kathmandu, Nepal. We offer the best hotels in 
+Hotel Booking.com is Nepal's leading online hotel reservation agency based in Kathmandu, Nepal. We offer the best hotels in 
 Nepal and a wide range of accommodation for our customers worldwide. We offer accommodation in Nepal ranging from five 
 star hotels to budget hotels. We have a sound network with various star hotels in Nepal, B & B accommodation, heritage 
 hotels, resorts, and guest houses in Kathmandu. Our network of hotels also includes various deluxe, superior, and tourist

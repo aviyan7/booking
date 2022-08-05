@@ -10,11 +10,11 @@ $id = $_SESSION['ID'];
 <?php 
 
 $room_no = $_GET['room_no'];
-$sql=mysqli_query($con,"select * from rooms where room_no='$room_no' ");
+$sql=mysqli_query($con,"select * from rooms where room_no='$room_no'");
 $res=mysqli_fetch_assoc($sql);
 ?>
     <div class="desc1"><h1><b><?php echo $res['type']; ?></h1></b></div>
-    <div class="img1">
+    <div class="gallery">
     <img src="images/<?php echo $res['image']; ?>" alt="Image" >
     </div>
 
@@ -36,7 +36,7 @@ $res=mysqli_fetch_assoc($sql);
 					</div><br>
 					<div class="type">
 						<?php
-            $sql1=mysqli_query($con,"select * from rooms");
+            $sql1=mysqli_query($con,"select * from rooms limit 3");
            while($result1= mysqli_fetch_assoc($sql1))
            {
             ?>
@@ -48,6 +48,6 @@ $res=mysqli_fetch_assoc($sql);
 
 
   <?php
-      include('./includes/footer.php')
+      include('./includes/footer.php');
   ?>
 

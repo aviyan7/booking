@@ -15,7 +15,7 @@ else{
         }
         else
         { 
-            echo $msg = "no";
+            echo $msg = "No any searches found";
         }
 }
 

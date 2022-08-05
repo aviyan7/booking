@@ -14,8 +14,8 @@
 	?>
   <div class="img">
 	<div class="gallery">
-      <img src="images/<?php echo $r_res['image']; ?>"alt="Image"id="img1" width="400" height="300"> <!--Id Is Img-->
-      <p class="desc"><?php echo substr($r_res['details'],0,100); ?></p><br>
+      <img src="images/<?php echo $r_res['image']; ?>"alt="Image"id="img1" width="400" height="300">
+      <div class="desc"><?php echo $r_res['type']; ?></div><br>
     </div>
   </div>
 	<?php } ?>

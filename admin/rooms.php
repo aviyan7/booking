@@ -8,7 +8,7 @@
 	}
 </script>
 
-<div style="overflow-x:auto;">
+<div style="overflow-y:auto;">
 <table class="table">
 	<h1 style='margin-left:10em'>Room Details</h1><hr>
 	<tr>

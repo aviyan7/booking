@@ -27,31 +27,31 @@ if(isset($add))
      </tr>
 	<tr>	
 		<th>Room No</th>
-		<td><input type="text" name="rno"/>
+		<td><input type="number" name="rno" required/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Room Type</th>
-		<td><input type="text" name="type"/>
+		<td><input type="text" name="type" title="Please enter a valid room type" required/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Price</th>
-		<td><input type="text" name="price"/>
+		<td><input type="number" name="price" required/>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Details</th>
-		<td><textarea name="details"></textarea>
+		<td><textarea name="details" cols="45" rows="10" required></textarea>
 		</td>
 	</tr>
 	
 	<tr>	
 		<th>Images</th>
-		<td><input type="file" name="img"/>
+		<td><input type="file" name="img" required/>
 		</td>
 	</tr>
 	
